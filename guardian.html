@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>镇魂 | Guardian Random Ship Generator</title>
+</head>
+
+<body>
+<h2>镇魂 | Guardian Random Ship Generator</h2>
+<p>Character list and sorting from <a href="">this post</a> on the Guardian Dreamwidth comm, which includes short blurbs about the characters.</p>
+<form id="inputs">
+	<input type="checkbox" name="sid" id="sid" checked><label for="sid">SID Members</label>
+	<input type="checkbox" name="villians" id="villians" checked><label for="villians">Villians</label>
+	<input type="checkbox" name="recurring" id="recurring" checked><label for="recurring">Recurring & Relatives</label>
+	<input type="checkbox" name="oneoff" id="oneoff" checked><label for="oneoff">One-Offs</label>
+	<button type="button" id="random">Generate</button>
+</form>
+<div class="results">
+	<span id="char1"></span> X <span id="char2"></span>
+</div>
+
+<script>
+const SID = ["赵云澜 Zhao Yunlan",
+"沈巍 Shen Wei",
+"郭长城 Guo Changcheng",
+"祝红 Zhu Hong",
+"大庆 Da Qing",
+"楚恕之 Chu Shuzhi",
+"汪徵 Wang Zheng",
+"林静 Lin Jing",
+"桑赞 Sang Zan",
+"老李 Old Li"];
+const VILLIANS = ["夜尊 Ye Zun",
+"烛九 Zhu Jiu",
+"鸦青 Ya Qing",
+"沙雅 Sha Ya",
+"王向阳 Wang Xiangyang",
+"贼酋 Rebel Chieftain"];
+const RECURRING = ["赵心慈 Zhao Xinci",
+"李茜 Li Qian",
+"成心妍 Cheng Xinyan",
+"欧阳贞 Ouyang Zhen",
+"周教授 Professor Zhou",
+"吴天恩 Wu Tian'en",
+"吴晓君 Wu Xiaojun",
+"四叔 Fourth Uncle",
+"迎春 Ying Chun",
+"丛波 Cong Bo",
+"高劲风 Gao Jingfeng",
+"郭英 Guo Ying",
+"于金兰 Yu Jinlan",
+"摄政官 Regent",
+"安柏 An Bai",
+"野火 Ye Huo",
+"大吉 Da Ji",
+"白素霞 Bai Suxia",
+"沈溪 Shen Xi",
+"獐狮 Zhang Shi",
+"楚念之 Chu Nianzhi",
+"郭长江 Guo Changjiang",
+"郭雄 Guo Xiong"];
+const ONEOFF = ["卢若梅 Lu Ruomei",
+"李玉芬 Li Yufen",
+"高天宇 Gao Tianyu",
+"谈啸 Tan Xiao",
+"张若楠 Zhang Ruonan",
+"张皓 Zhang Hao",
+"王子强 Wang Ziqiang",
+"刘亚东 Liu Yadong",
+"王一珂 Wang Yike",
+"林玉森 Lin Yusen",
+"小燕 xiao-Yan",
+"张丹妮 Zhang Danni",
+"家辉 Jia Hui",
+"黄朝阳 Huang Chaoyang",
+"李光标 Li Guangbiao",
+"黄麟奇 Huang Linqi",
+"李佳琪 Li Jiaqi",
+"季小白 Ji Xiaobai",
+"周薇薇 Zhou Weiwei",
+"来苏 Lai Su",
+"丁顿 Ding Dun",
+"佳佳 Jiajia",
+"朗哥 Lang-ge",
+"小全 xiao-Quan",
+"郑中原 Zheng Zhongyuan",
+"郑意 Zheng Yi",
+"包老三 Bao Laosan",
+"安松 An Song",
+"丹丹 Dandan",
+"执事 Deacon",
+"波比 Bo Bi",
+"小杰 xiao-Jie",
+"甲哥 Jia-ge",
+"卫蓝 Wei Lan",
+"冯去病 Feng Qubing",
+"吕织 Lü Zhi",
+"刘浪 Liu Lang",
+"王群 Wang Qun",
+"金浩 Jin Hao",
+"东南 Dong Nan",
+"祖马 Zu Ma",
+"朱豪 Zhu Hao",
+"孔鲸 Kong Jing",
+"郑大钱 Zheng Daqian",
+"茵茵 Yinyin",
+"华玉柱 Hua Yuzhu",
+"古班 Gu Ban",
+"高雨龙 Gao Yulong",
+"魇公子 Nightmare Master",
+"浮游 Fu You",
+"麻龟 Ma Gui",
+"米露 Mi Lu",
+"相亲女孩 Blind date girl"];
+
+const INPUTS = document.getElementById("inputs");
+const CHAR1 = document.getElementById("char1");
+const CHAR2 = document.getElementById("char2");
+const MAPPING = {"sid": SID, "villians": VILLIANS, "recurring": RECURRING, "oneoff": ONEOFF};
+
+document.getElementById("random").addEventListener("click", randomize);
+
+function randomize() {
+	let checks = new FormData(INPUTS);
+	let data = [];
+	for (var key of checks.keys()) {
+	   data.push(...MAPPING[key]);
+	}
+
+	let char1 = randomInt(data.length);
+	let char2 = randomInt(data.length);
+	CHAR1.innerHTML = data[char1];
+	CHAR2.innerHTML = data[char2];
+
+}
+
+function randomInt(max) {
+	return Math.floor(Math.random() * max)
+}
+</script>
+</body>
+<html>
