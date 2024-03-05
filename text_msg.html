@@ -1,0 +1,74 @@
+<main>
+  <h1>Text Chat Generator for AO3</h1>
+  <p>This makes it faster to generate fake text messages for works on AO3. It is based on <a href="https://archiveofourown.org/works/6434845">this tutorial by CodenameCarrot and La_Temperanza</a> (which provides most of the CSS used).
+  </p>
+  <p>Caveats and limitations:
+  <ul>
+    <li>Can only handle two users, a sender and a replier.</li>
+    <li>Light mode iOS style only (for now....)</li>
+    <li>No timestamps/read notifs</li>
+    <li>This code is less fussy about image URL detection than AO3 is - there is a chance that AO3 will give you invalid markup errors on valid image files if the URL pattern doesn't match.</li>
+  </ul>
+  </p>
+  <h2>Instructions</h2>
+  <p>This generator primarily works off line breaks to determine which side of the converation a message belongs to. Each new line indicates a new message:<br>
+  <pre>
+  A message from speaker one.
+  A second message from speaker one.
+</pre>
+  </p>
+  <p>An extra blank line indicates a switch in speaker:<br>
+  <pre>
+  A message from speaker one.
+  
+  A messge from speaker two.
+  A second message from speaker two.
+  
+  A reply from speaker one</pre>
+  </p>
+  <p>Sent images are represented as a line with just the url to an image (beginning with http:// or https:// and including an image file extension such as .png in it), followed by a line that gives an accessible text description of the image:
+  <pre>
+  https://example.com/myimage.png
+  My example image
+  </pre>
+
+  Messages immediately above or below the image lines will be rendered as messages from the same side of the conversation as the image.
+  </p>
+  <p>When you are satisfied, <a href="https://archiveofourown.org/skins/new?skin_type=WorkSkin">create a new work skin</a> and paste in the contents of the 'Final CSS' textbox, and then <a href="https://archiveofourown.org/works/new">create a new work</a>, select the work skin you just saved for it, and then use the contents of the 'Final HTML' box in your work, where you want the generated messages to appear.
+  </p>
+  <div class="card">
+    <label for="msgInput">Message Input:</label>
+    <textarea id="msgInput" rows=10 cols=50>
+  Hey
+what's up
+
+hello!
+https://github.com/momijizukamori/momijizukamori.github.io/blob/master/beanstalk-dark.png?raw=true
+placeholder image test!
+some other message
+
+good morning
+https://github.com/momijizukamori/momijizukamori.github.io/blob/master/beanstalk-dark.png?raw=true
+a sent placeholder image test!
+
+</textarea>
+  </div>
+  <div class="card">
+    <label for="startReply">Starting message is a reply</label>
+    <input type="checkbox" id="startReply" name="startReply" />
+    <label for="useHeader">Show contact header?</label>
+    <input type="checkbox" id="useHeader" name="useHeader" checked />
+    <label for="headerName">Contact Name</label>
+    <input type="text" id="headerName" name="headerName" value="Jiping" />
+  </div>
+  <br>
+  <div class="card">
+    <label for="outputHTML">Final HTML:</label>
+    <textarea id="outputHTML" readonly rows=10 cols=50></textarea>
+  </div>
+  <div class="card">
+    <label for="outputCSS">Final CSS:</label>
+    <textarea id="outputCSS" readonly rows=10 cols=50>></textarea>
+  </div>
+  <div id="workskin"></div>
+</main>

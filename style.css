@@ -1,0 +1,17 @@
+label {
+  font-weight: bold;
+  display: block;
+}
+
+.card {
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+body {
+  background-color: #dddddd;
+}
+main {
+  max-width: 60em;
+  margin: 0 auto;
+}
