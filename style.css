@@ -17,7 +17,8 @@ main {
 }
 
 .preview {
-  max-width: 50%;
+  width: 45%;
   min-width: 300px;
   display: inline-block;
+  vertical-align: top;
 }
