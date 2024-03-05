@@ -44,7 +44,7 @@ function generate() {
 \}
     `;
       imageCSS.push(imgCSS);
-      return `<a href="${msg.url}" rel="nofollow"><span class="image image-${i}" title="${msg.alt}"></span></a><br />`;
+      return `<span class="hide"><b>${msg.reply ? "Reply" : "Message"}:</b> shared image </span><a href="${msg.url}" rel="nofollow"><span class="hide">${msg.alt}</span><span class="image image-${i}" title="${msg.alt}"></span></a><br />`;
     } else {
       return `<span class="${
         msg.reply ? "reply" : "text"
@@ -68,7 +68,7 @@ function generate() {
 \}`;
 
   const mainBlock = `#workskin .phone \{
-  max-width: 400px;
+  max-width: 300px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: table;
   margin: auto;
@@ -134,7 +134,7 @@ function generate() {
 `;
 
   const headerBlock = `#workskin .header \{
-  min-width: 400px;
+  min-width: 300px;
   background-color: #f6f6f6;
   border-bottom: 1px solid #b2b2b2;
   color: #000000;
@@ -163,6 +163,7 @@ function generate() {
 
   document.getElementById("outputHTML").value = finalHTML;
   document.getElementById("workskin").innerHTML = finalHTML;
+  document.getElementById("preview").innerHTML = finalHTML;
   document.getElementById("outputCSS").value = finalCSS;
 
   var styleSheet = document.createElement("style");

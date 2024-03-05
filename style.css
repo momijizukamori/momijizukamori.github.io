@@ -15,3 +15,9 @@ main {
   max-width: 60em;
   margin: 0 auto;
 }
+
+.preview {
+  max-width: 50%;
+  min-width: 300px;
+  display: inline-block;
+}

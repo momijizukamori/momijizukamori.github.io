@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Ao3 Text message generator</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
 <main>
   <h1>Text Chat Generator for AO3</h1>
   <p>This makes it faster to generate fake text messages for works on AO3. It is based on <a href="https://archiveofourown.org/works/6434845">this tutorial by CodenameCarrot and La_Temperanza</a> (which provides most of the CSS used).
@@ -68,7 +78,20 @@ a sent placeholder image test!
   </div>
   <div class="card">
     <label for="outputCSS">Final CSS:</label>
-    <textarea id="outputCSS" readonly rows=10 cols=50>></textarea>
+    <textarea id="outputCSS" readonly rows=10 cols=50></textarea>
   </div>
-  <div id="workskin"></div>
+  <h3>Preview</h3>
+  <div class="preview">
+    With workskin enabled:
+    <div id="workskin"></div>
+  </div>
+  <div class="preview">
+    With workskin disabled:
+    <div id="preview"></div>
+  </div>
 </main>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
