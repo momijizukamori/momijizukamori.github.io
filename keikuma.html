@@ -78,7 +78,7 @@
      style="display:inline"
      transform="translate(34.884081,-40.914944)">
     <path
-       style="fill:#808080;stroke:#cccccc;stroke-width:1.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#808080;stroke:#000000;stroke-width:1.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m -26.261194,131.60686 8.92775,-15.46331"
        id="use4676-8" />
     <path
@@ -526,7 +526,7 @@
        d="M -9.237914,112.56043 H 4.2636527"
        id="path6447" />
     <path
-       style="fill:#999999;stroke:#cccccc;stroke-width:1.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#999999;stroke:#000000;stroke-width:1.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M -9.237914,112.56043 H 4.2636527"
        id="use8593" />
     <path
@@ -1048,14 +1048,14 @@
        rx="6.2993741"
        ry="4.1307373" />
     <ellipse
-       style="fill:#ffffff;stroke:#000000;stroke-width:1.611"
+       style="fill:rgb(88, 47, 139);stroke:#000000;stroke-width:1.611"
        id="path859-190"
        cx="-15.283727"
        cy="111.92525"
        rx="6.2993741"
        ry="4.1307373" />
     <ellipse
-       style="fill:#ffffff;stroke:#000000;stroke-width:1.611"
+       style="fill:url(#boss);stroke:#000000;stroke-width:1.611"
        id="path859-190-1"
        cx="-27.779207"
        cy="134.50714"
@@ -1253,14 +1253,18 @@
   </g>
 </svg>
 
+<button id="reset" value="Reset">Reset</button>
 
 <script>
    document.addEventListener("click", function(event) { 
       const el = event.target;
       console.log(el.id);
-      switch (el.tagName) {
+      // Some paths are set and will never vary
+      if (!["path859-190-1", "path859-190", "use4676-8", "use8593"].includes(el.id)) {
+         switch (el.tagName) {
       case "ellipse":
          console.log(el.style.fill);
+
          if (["path859-16-17", "path859-16-1", "path859-16-5", "path859-16-4"].includes(el.id) && el.style.fill == "rgb(255, 255, 255)") {
             el.style.fill = 'url("#boss")';
          } else {
@@ -1300,6 +1304,25 @@
                break;
          }
          break;
+      }
+      }
+
+   });
+
+   const reset = document.getElementById("reset");
+   reset.addEventListener("click", e => {
+      const nodes = document.getElementsByTagName("ellipse");
+      for (let node of nodes) {
+         if (!["path859-190-1", "path859-190"].includes(node.id)) {
+            node.style.fill = "#ffffff";
+         }
+      }
+
+      const paths = document.getElementsByTagName("path");
+      for (let path of paths) {
+         if (!["use4676-8", "use8593"].includes(path.id)) {
+            path.style.stroke = "rgb(204, 204, 204)";
+         }
       }
    })
 </script>
