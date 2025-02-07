@@ -1,0 +1,205 @@
+<html>
+<head>
+<title>TKRB Random Ship Generator</title>
+<style type="text/css">
+	body {
+		background-image: url("beanstalk-dark.png");
+	}
+	#container {
+		max-width: 70em;
+		margin: 2em auto;
+		text-align: center;
+		font-family: sans-serif;
+		background-color:rgba(255, 255, 255, .7);
+	}
+
+	#random {
+		display: block;
+		margin: 1em auto;
+	}
+
+	#results {
+		padding: 1em;
+		font-size: 1.35em;
+	}
+	h2 { padding: 0.5em; }
+
+	a {
+		color: darkred;
+	}
+
+	a:hover {text-decoration: none}
+
+	#char1, #char2 {font-weight: bold;}
+</style>
+</head>
+
+<body>
+<div id="container">
+	<h2>TKRB Random Ship Generator</h2>
+	<form id="inputs">
+		<input type="checkbox" name="tantou" id="tantou" checked><label for="tantou">Tantou</label>
+		<input type="checkbox" name="wakizashi" id="wakizashi" checked><label for="wakizashi">Wakizashi</label>
+		<input type="checkbox" name="uchigatana" id="uchigatana" checked><label for="uchigatana">Uchigatana</label>
+		<input type="checkbox" name="tachi" id="tachi" checked><label for="tachi">Tachi</label>
+		<input type="checkbox" name="ootachi" id="ootachi" checked><label for="ootachi">Ootachi</label>
+		<input type="checkbox" name="yari" id="yari" checked><label for="yari">Yari</label>
+		<input type="checkbox" name="naginata" id="naginata" checked><label for="naginata">Naginata</label>
+		<input type="checkbox" name="tsurugi" id="tsurugi" checked><label for="tsurugi">Tsurugi</label>
+				<button type="button" id="random">Generate</button>
+	</form>
+	<div id="results">
+		<span id="char1"></span> X <span id="char2"></span>
+	</div>
+</div>
+
+<script>
+const TANTOU = ["Kyougoku Masamune",
+"Kuki Masamune",
+"Sayo Samonji",
+"Imanotsurugi",
+"Chatannakiri",
+"Akita Toushirou",
+"Houchou Toushirou",
+"Maeda Toushirou",
+"Kenshin Kagemitsu",
+"Aizen Kunitoshi",
+"Hirano Toushirou",
+"Mouri Toushirou",
+"Gokotai",
+"Taikou Samonji",
+"Hakata Toushirou",
+"Hyuuga Masamune",
+"Midare Toushirou",
+"Gotou Toushirou",
+"Taikogane Sadamune",
+"Yagen Toushirou",
+"Shinano Toushirou",
+"Atsushi Toushirou",
+"Fudou Yukimitsu"];
+const WAKIZASHI = ["Kashagiri",
+"Urashima Kotetsu",
+"Monoyoshi Sadamune",
+"Namazuo Toushirou",
+"Honebami Toushirou",
+"Horikawa Kunihiro",
+"Kotegiri Gou",
+"Hanjin",
+"Chiganemaru",
+"Hizen Tadahiro",
+"Nikkari Aoe"];
+const UCHIGATANA = ["Inaba Gou",
+"Magoroku Kanemoto",
+"Ishida Masamune",
+"Tomita Gou",
+"Goke Kanemitsu",
+"Taikei Naotane",
+"Nakigitsune",
+"Kashuu Kiyomitsu",
+"Yamatonokami Yasusada",
+"Suishinshi Masahide",
+"Jizou Yukihira",
+"Doudanuki Masakuni",
+"Minamoto Kiyomaro",
+"Yamanbagiri Kunihiro",
+"Yamanbagiri Chougi",
+"Mutsunokami Yoshiyuki",
+"Nansen Ichimonji",
+"Ookurikara",
+"Samidare Gou",
+"Kasen Kanesada",
+"Matsui Gou",
+"Hachisuka Kotetsu",
+"Murakumo Gou",
+"Kikkou Sadamune",
+"Buzen Gou",
+"Heshikiri Hasebe",
+"Souza Samonji",
+"Nankaitarou Chouson",
+"Kuwana Gou",
+"Sengo Muramasa",
+"Izuminokami Kanesada",
+"Nagasone Kotetsu"];
+const TACHI = ["Nukemaru",
+"Sasanuki",
+"Jikkyuu Mitsutada",
+"Onimaru Kunitsuna",
+"Hacchou Nenbutsu",
+"Unshou",
+"Kogarasumaru",
+"Shishiou",
+"Norimune Ichimonji",
+"Uguisumaru",
+"Chiyoganemaru",
+"Kokindenjunotachi",
+"Tsurumaru Kuninaga",
+"Ichigo Hitofuri",
+"Higekiri",
+"Kousetsu Samonji",
+"Akashi Kuniyuki",
+"Sohayanotsurugi",
+"Hizamaru",
+"Mikazuki Munechika",
+"Juzumaru Tsunetsugu",
+"Himetsuru Ichimonji",
+"Daihannya Nagamitsu",
+"Shokudaikiri Mitsutada",
+"Koryuu Kagemitsu",
+"Kogitsunemaru",
+"Yamabushi Kunihiro",
+"Fukushima Mitsutada",
+"Azuki Nagamitsu",
+"Sanchoumou",
+"Ookanehira",
+"Oodenta Mitsuyo",
+"Nikkou Ichimonji"];
+
+const OOTACHI = ["Hotarumaru",
+"Ishikirimaru",
+"Jiroutachi",
+"Taroutachi",
+"Nenekirimaru"];
+
+const TSURUGI = ["Heishishourinken",
+"Hakusan Yoshimitsu",
+"Shichiseiken"];
+
+const NAGINATA = ["Tomoegata Naginata",
+"Shizukagata Naginata",
+"Iwatooshi"];
+
+const YARI = ["Ningen Mukotsu",
+"Oochidori Juumonji Yari",
+"Otegine",
+"Nihongou",
+"Tonbokiri"];
+
+const INPUTS = document.getElementById("inputs");
+const CHAR1 = document.getElementById("char1");
+const CHAR2 = document.getElementById("char2");
+const MAPPING = {"tantou": TANTOU, "wakizashi": WAKIZASHI, "uchigatana": UCHIGATANA, "tachi": TACHI, "ootachi": OOTACHI, "yari": YARI, "naginata": NAGINATA, "tsurugi": TSURUGI};
+
+document.getElementById("random").addEventListener("click", randomize);
+
+function randomize() {
+	let checks = new FormData(INPUTS);
+	let data = [];
+	for (var key of checks.keys()) {
+	   data.push(...MAPPING[key]);
+	}
+
+	let char1 = randomInt(data.length);
+	let char2 = randomInt(data.length);
+	CHAR1.innerHTML = data[char1];
+	CHAR2.innerHTML = data[char2];
+
+}
+
+function randomInt(max) {
+	return Math.floor(Math.random() * max)
+}
+
+window.addEventListener('load', randomize);
+</script>
+</body>
+<html>
