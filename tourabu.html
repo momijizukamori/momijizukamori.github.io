@@ -30,13 +30,20 @@
 
 	a:hover {text-decoration: none}
 
-	#char1, #char2 {font-weight: bold;}
+	#char1, #char2, #char3, #char4 {font-weight: bold;}
+
+	.hide {display: none;}
 </style>
 </head>
 
 <body>
 <div id="container">
 	<h2>TKRB Random Ship Generator</h2>
+	<form id="options">
+		<input type="radio" id="2" name="pairing" checked /><label for="2">Pair</label>
+		<input type="radio" id="3" name="pairing" /><label for="3">Threesome</label>
+		<input type="radio" id="4" name="pairing" /><label for="4">Foursome</label>
+	</form>
 	<form id="inputs">
 		<input type="checkbox" name="tantou" id="tantou" checked><label for="tantou">Tantou</label>
 		<input type="checkbox" name="wakizashi" id="wakizashi" checked><label for="wakizashi">Wakizashi</label>
@@ -49,7 +56,7 @@
 				<button type="button" id="random">Generate</button>
 	</form>
 	<div id="results">
-		<span id="char1"></span> X <span id="char2"></span>
+		<span id="char1"></span> X <span id="char2"></span><span id="threeway"> X <span id="char3"></span><span id="fourway"> X <span id="char4"></span>
 	</div>
 </div>
 
@@ -177,7 +184,12 @@ const YARI = ["Ningen Mukotsu",
 const INPUTS = document.getElementById("inputs");
 const CHAR1 = document.getElementById("char1");
 const CHAR2 = document.getElementById("char2");
+const CHAR3 = document.getElementById("char3");
+const CHAR4 = document.getElementById("char4");
 const MAPPING = {"tantou": TANTOU, "wakizashi": WAKIZASHI, "uchigatana": UCHIGATANA, "tachi": TACHI, "ootachi": OOTACHI, "yari": YARI, "naginata": NAGINATA, "tsurugi": TSURUGI};
+
+const PAIRINGS = document.querySelectorAll("input[name=pairing]");
+var charCount = document.querySelector("input[name=pairing]:checked").id;
 
 document.getElementById("random").addEventListener("click", randomize);
 
@@ -188,18 +200,53 @@ function randomize() {
 	   data.push(...MAPPING[key]);
 	}
 
-	let char1 = randomInt(data.length);
-	let char2 = randomInt(data.length);
-	CHAR1.innerHTML = data[char1];
-	CHAR2.innerHTML = data[char2];
 
+	let char3 = randomInt(data.length);
+	switch (charCount) {
+	case '4':
+		let char4 = randomInt(data.length);
+		CHAR4.innerHTML = data[char4];
+	case '3':
+		let char3 = randomInt(data.length);
+		CHAR3.innerHTML = data[char3];
+	case '2':
+		let char1 = randomInt(data.length);
+		let char2 = randomInt(data.length);
+		CHAR1.innerHTML = data[char1];
+		CHAR2.innerHTML = data[char2];
+	}
 }
 
 function randomInt(max) {
 	return Math.floor(Math.random() * max)
 }
 
-window.addEventListener('load', randomize);
+function showHideChars() {
+	charCount = document.querySelector("input[name=pairing]:checked").id;
+	switch (charCount) {
+	case '4':
+		document.querySelector("#threeway").classList.remove("hide");
+		document.querySelector("#fourway").classList.remove("hide");
+		break;
+	case '3':
+		document.querySelector("#threeway").classList.remove("hide");
+		document.querySelector("#fourway").classList.add("hide");
+		break;
+	case '2':
+		document.querySelector("#threeway").classList.add("hide");
+		document.querySelector("#fourway").classList.add("hide");
+		break;
+	}
+}
+
+function onLoad() {
+	showHideChars();
+	randomize();
+
+}
+
+window.addEventListener('load', onLoad);
+PAIRINGS.forEach((el) => {el.addEventListener('change', onLoad)});
 </script>
 </body>
 <html>
