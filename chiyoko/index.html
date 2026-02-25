@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TKRB Chiyoko/Kabocha Helper</title>
+	<link rel="stylesheet" type="text/css" href="tkrb.css">
+	<style type="text/css">
+
+		:root {
+			--grid-line-color: red;
+			--panel-color: #444;
+		}
+
+		main {display: flex;
+			flex-wrap: wrap;
+			row-gap: 2em;
+			column-gap: 1em;}
+
+		.image {position: relative;}
+		.overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		.image.scale-100 img, .image.scale-100 .overlay {
+			width: 300px;
+			height: 300px;
+		}
+
+		.image.scale-50 img, .image.scale-50 .overlay {
+			width: 150px;
+			height: 150px;
+		}
+
+		.image.scale-33 img, .image.scale-33 .overlay {
+			width: 100px;
+			height: 100px;
+		}
+
+		.overlay {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			grid-column-gap: 0px;
+			grid-row-gap: 0px;
+		}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; 
+		}
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+.div4 { grid-area: 2 / 1 / 3 / 2; }
+.div5 { grid-area: 2 / 2 / 3 / 3; 
+		border: 1px solid var(--grid-line-color);}
+.div6 { grid-area: 2 / 3 / 3 / 4; }
+.div7 { grid-area: 3 / 1 / 4 / 2; }
+.div8 { grid-area: 3 / 2 / 4 / 3; }
+.div9 { grid-area: 3 / 3 / 4 / 4; }
+
+.div2, .div8 {
+			border-left: 1px solid var(--grid-line-color);
+		border-right: 1px solid var(--grid-line-color);
+}
+
+.div4, .div6 {
+			border-top: 1px solid var(--grid-line-color);
+		border-bottom: 1px solid var(--grid-line-color);
+}
+
+.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9 {
+	background-color: var(--panel-color);
+}
+
+div.clear {background-color: transparent;}
+.hide {display: none;}
+
+#top::before {
+	content:url("top.svg");
+	height:81px;
+	width:80px;
+	z-index:2;
+	color: currentColor;
+
+}
+
+#bottom::before {
+	content:url("bottom.svg");
+	height:81px;
+	width:80px;
+	z-index:2;
+	color:currentColor;
+
+}
+
+.controls {
+	padding:2em;
+}
+	</style>
+
+	<script src="https://cdn.jsdelivr.net/npm/umbrellajs"></script>
+</head>
+<body>
+			<div class="controls">
+				<fieldset>
+					<legend>
+						Square scale
+					</legend>
+					<div class="radio-input">
+						<label class="label">
+						  <input type="radio" id="scale-100" name="value-radio" value="scale-100" />
+						  <span class="text">100%</span>
+						</label>
+						<label class="label">
+						  <input type="radio" id="scale-50" name="value-radio" value="scale-50" />
+						  <span class="text">50%</span>
+						</label>
+						<label class="label">
+						  <input type="radio" id="scale-33" name="value-radio" value="scale-33" />
+						  <span class="text">33%</span>
+						</label>
+					  </div>
+					  
+				</fieldset>
+				<button id="bottom" class="top" type="button"><span>Show Legs</span></button>
+				<button id="top" class="bottom hide" type="button"><span>Show Head</span>></button>
+
+				<button id="show" type="button"><span>Show All</span></button>
+				<button id="hide" type="button"><span>Hide All</span></button>
+			</div>
+	<main>
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000003_top.png">
+				<img class="bottom hide" src="000003_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Mikazuki Munechika</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000005_top.png">
+				<img class="bottom hide" src="000005_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Kogitsunemaru</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000007_top.png">
+				<img class="bottom hide" src="000007_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Ishikirimaru</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000009_top.png">
+				<img class="bottom hide" src="000009_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Iwatooshi</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000011_top.png">
+				<img class="bottom hide" src="000011_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Imanotsurugi</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000013_top.png">
+				<img class="bottom hide" src="000013_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Oodenta Mitsuyo</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000015_top.png">
+				<img class="bottom hide" src="000015_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Sohayanotsurugi</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000017_top.png">
+				<img class="bottom hide" src="000017_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Juzumaru Tsunetsugu</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000019_top.png">
+				<img class="bottom hide" src="000019_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Nikkari Aoe</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000023_top.png">
+				<img class="bottom hide" src="000023_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Nakigitsune</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000025_top.png">
+				<img class="bottom hide" src="000025_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Ichigo Hitofuri</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000027_top.png">
+				<img class="bottom hide" src="000027_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Namazuo Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000029_top.png">
+				<img class="bottom hide" src="000029_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Honebami Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000031_top.png">
+				<img class="bottom hide" src="000031_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Hirano Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000033_top.png">
+				<img class="bottom hide" src="000033_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Atsushi Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000035_top.png">
+				<img class="bottom hide" src="000035_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Gotou Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000037_top.png">
+				<img class="bottom hide" src="000037_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Shinano Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000039_top.png">
+				<img class="bottom hide" src="000039_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Maeda Toushirou</div>
+		</div>
+
+				<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000041_top.png">
+				<img class="bottom hide" src="000041_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Akita Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000043_top.png">
+				<img class="bottom hide" src="000043_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Hakata Toushirou</div>
+		</div>
+
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000045_top.png">
+				<img class="bottom hide" src="000045_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Midare Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000047_top.png">
+				<img class="bottom hide" src="000047_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Gokotai</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000049_top.png">
+				<img class="bottom hide" src="000049_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Yagen Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000051_top.png">
+				<img class="bottom hide" src="000051_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Houchou Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000053_top.png">
+				<img class="bottom hide" src="000053_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Ookanehira</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000055_top.png">
+				<img class="bottom hide" src="000055_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Uguisumaru</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000057_top.png">
+				<img class="bottom hide" src="000057_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Akashi Kuniyuki</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000059_top.png">
+				<img class="bottom hide" src="000059_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Hotarumaru</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000061_top.png">
+				<img class="bottom hide" src="000061_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Aizen Kunitoshi</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000063_top.png">
+				<img class="bottom hide" src="000063_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Sengo Muramasa</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000065_top.png">
+				<img class="bottom hide" src="000065_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Tonbokiri</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000067_top.png">
+				<img class="bottom hide" src="000067_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Monoyoshi Sadamune</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000069_top.png">
+				<img class="bottom hide" src="000069_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Taikogane Sadamune</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000071_top.png">
+				<img class="bottom hide" src="000071_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Kikkou Sadamune</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000073_top.png">
+				<img class="bottom hide" src="000073_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Shokudaikiri Mitsutada</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000075_top.png">
+				<img class="bottom hide" src="000075_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Daihannya Nagamitsu</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000077_top.png">
+				<img class="bottom hide" src="000077_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Koryuu Kagemitsu</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000079_top.png">
+				<img class="bottom hide" src="000079_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Kousetsu Samonji</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000081_top.png">
+				<img class="bottom hide" src="000081_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Souza Samonji</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000083_top.png">
+				<img class="bottom hide" src="000083_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Sayo Samonji</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000085_top.png">
+				<img class="bottom hide" src="000085_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Kashuu Kiyomitsu</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000087_top.png">
+				<img class="bottom hide" src="000087_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Yamatonokami Yasusada</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000089_top.png">
+				<img class="bottom hide" src="000089_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Kasen Kanesada</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000091_top.png">
+				<img class="bottom hide" src="000091_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Izuminokami Kanesada</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000093_top.png">
+				<img class="bottom hide" src="000093_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Mutsunokami Yoshiyuki</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000095_top.png">
+				<img class="bottom hide" src="000095_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Yamanbagiri Kunihiro</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000097_top.png">
+				<img class="bottom hide" src="000097_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Yamabushi Kunihiro</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000099_top.png">
+				<img class="bottom hide" src="000099_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Horikawa Kunihiro</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000101_top.png">
+				<img class="bottom hide" src="000101_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Hachisuka Kotetsu</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000103_top.png">
+				<img class="bottom hide" src="000103_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Urashima Kotetsu</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000105_top.png">
+				<img class="bottom hide" src="000105_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Nagasone Kotetsu</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000107_top.png">
+				<img class="bottom hide" src="000107_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Higekiri</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000112_top.png">
+				<img class="bottom hide" src="000112_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Hizamaru</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000116_top.png">
+				<img class="bottom hide" src="000116_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Ookurikara</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000118_top.png">
+				<img class="bottom hide" src="000118_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Heshikiri Hasebe</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000120_top.png">
+				<img class="bottom hide" src="000120_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Fudou Yukimitsu</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000122_top.png">
+				<img class="bottom hide" src="000122_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Shishiou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000124_top.png">
+				<img class="bottom hide" src="000124_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Kogarasumaru</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000128_top.png">
+				<img class="bottom hide" src="000128_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Doudanuki Masakuni</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000130_top.png">
+				<img class="bottom hide" src="000130_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Tsurumaru Kuninaga</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000132_top.png">
+				<img class="bottom hide" src="000132_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Taroutachi</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000134_top.png">
+				<img class="bottom hide" src="000134_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Jiroutachi</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000136_top.png">
+				<img class="bottom hide" src="000136_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Nihongou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000138_top.png">
+				<img class="bottom hide" src="000138_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Otegine</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000140_top.png">
+				<img class="bottom hide" src="000140_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Tomoegata Naginata</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000142_top.png">
+				<img class="bottom hide" src="000142_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Mouri Toushirou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000144_top.png">
+				<img class="bottom hide" src="000144_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Kotegiri Gou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000146_top.png">
+				<img class="bottom hide" src="000146_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Kenshin Kagemitsu</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000148_top.png">
+				<img class="bottom hide" src="000148_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Azuki Nagamitsu</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000150_top.png">
+				<img class="bottom hide" src="000150_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Hyuuga Masamune</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000152_top.png">
+				<img class="bottom hide" src="000152_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Shizukagata Naginata</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000154_top.png">
+				<img class="bottom hide" src="000154_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Nansen Ichimonji</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000156_top.png">
+				<img class="bottom hide" src="000156_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Chiyoganemaru</div>
+		</div>
+
+		<!-- <div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000158_top.png">
+				<img class="bottom hide" src="000158_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Yamanbagiri Chougi</div>
+		</div> -->
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000160_top.png">
+				<img class="bottom hide" src="000160_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Kogitsunemaru</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000166_top.png">
+				<img class="bottom hide" src="000166_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Nankaitarou Chouson</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000168_top.png">
+				<img class="bottom hide" src="000168_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Hizen Tadahiro</div>
+		</div>
+
+
+		<!-- <div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000170_top.png">
+				<img class="bottom hide" src="000170_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Chatannakiri</div>
+		</div> -->
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000172_top.png">
+				<img class="bottom hide" src="000172_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Kuwana Gou</div>
+		</div>
+
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000178_top.png">
+				<img class="bottom hide" src="000178_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Matsui Gou</div>
+		</div>
+
+
+		<!-- <div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000188_top.png">
+				<img class="bottom hide" src="000188_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Nikkou Ichimonji</div>
+		</div> -->
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000196_top.png">
+				<img class="bottom hide" src="000196_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Hanjin</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000236_top.png">
+				<img class="bottom hide" src="000236_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Unshou</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000240_top.png">
+				<img class="bottom hide" src="000240_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Unji</div>
+		</div>
+
+		<div class="sword">
+			<div class="image scale-100">
+				<img class="top" src="000254_top.png">
+				<img class="bottom hide" src="000254_bottom.png">
+			 	<div class="overlay">
+					<div data-square="div1" class="div1"> </div>
+					<div data-square="div2" class="div2"> </div>
+					<div data-square="div3" class="div3"> </div>
+					<div data-square="div4" class="div4"> </div>
+					<div data-square="div5" class="div5"> </div>
+					<div data-square="div6" class="div6"> </div>
+					<div data-square="div7" class="div7"> </div>
+					<div data-square="div8" class="div8"> </div>
+					<div data-square="div9" class="div9"> </div>
+				</div> 
+			</div>
+			<div class="name">Unjuu</div>
+		</div>
+	</main>
+
+
+
+<script type="text/javascript">
+	u(".overlay div").on('click', function (e) {
+		let square = u(e.currentTarget).data('square');
+		u(`.${square}`).toggleClass('clear')
+	});
+
+	u("#top, #bottom").on('click', function (e) {
+		u(`.top, .bottom`).toggleClass('hide');
+	});
+
+	u('.controls fieldset input').on('change', function (e) {
+		let scale = e.currentTarget.id;
+		u('.image').removeClass('scale-100', 'scale-50', 'scale-33')
+		u('.image').addClass(scale);
+	});
+
+	u("#show").on('click', function (e) {
+		u('.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9').addClass('clear');
+	});
+
+	u("#hide").on('click', function (e) {
+		u('.div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9').removeClass('clear');
+	});
+
+	let scale = u('.controls fieldset input').filter(':checked').first().id;
+	if (scale) {
+		u('.image').removeClass('scale-100', 'scale-50', 'scale-33')
+		u('.image').addClass(scale);
+	}
+
+
+
+</script>
+</body>
+</html>

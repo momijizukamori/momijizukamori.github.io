@@ -1,0 +1,128 @@
+body {
+    background-image: url("DarkBrownPatternBg.png");
+}
+
+button {
+    height: 81px;
+    min-width: 358px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    position: relative;
+    cursor: pointer;
+    background-color: currentColor;
+    padding-left:120px;
+    padding-right:20px;
+    border: 0px;
+    color: #1e7e14;
+    font-size: 30px;
+    font-weight: 600;
+    box-shadow: 1px 4px 3px 2px #7f7e79;
+    fill: currentColor;
+  }
+
+  button span {
+    color: white;
+  }
+  
+  button:before {
+    content: "";
+    font-size:80px;
+    position: absolute;
+  
+    left: 0px;
+    width:80px;
+    height: 81px;
+    background-color: white;
+    color: currentColor;
+    
+  }
+  
+  button:after {
+    content: "";
+    position: absolute;
+    left: 80px;
+    bottom: 0px;
+    border-top: 81px solid white;
+    border-right: 32px solid currentColor;
+    color: currentColor;
+  }
+  
+  button:hover, #top:hover{
+    color:#5bab4a;
+  }
+
+  button:active {
+  box-shadow: 0 0 0 0 transparent;
+  top: 4px;
+  left: 3px;
+  }
+
+  /* From Uiverse.io by laksh_7112 */ 
+.radio-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.radio-input input {
+  display: none;
+}
+
+.radio-input .label {
+  width: 130px;
+  height: 42px;
+  background-color: #696969;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  transition: all 0.1s linear;
+  border: 1px solid #696969;
+
+  position: relative;
+  cursor: pointer;
+  box-shadow: 2px 4px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.label:hover {
+  background-color:#2b2b2b;
+  border-color:#2b2b2b;
+}
+
+.label:has(input[type="radio"]:checked) {
+  background-color:#bebebe;
+  border-color:#bebebe;
+}
+
+
+
+.label::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  border-top: 18px solid transparent;
+  border-right: 18px solid rgba(255,255, 255, 0.3);
+}
+
+.label:has(input[type="radio"]:checked)::after {
+  border-right: 18px solid #d5d5d5;
+}
+
+.label .text {
+  color: white;
+  font-size: 15px;
+  line-height: 12px;
+  padding: 0px;
+  font-weight: 800;
+  transition: all 0.1s linear;
+
+}
