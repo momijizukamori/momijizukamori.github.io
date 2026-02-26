@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>TKRB Chiyoko/Kabocha Helper</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="tkrb.css">
 	<style type="text/css">
 
@@ -14,27 +17,44 @@
 
 		main {display: flex;
 			flex-wrap: wrap;
-			row-gap: 2em;
-			column-gap: 1em;}
+			row-gap: 1.5em;
+			column-gap: 0.5em;
+			justify-content: center;}
 
 		.image {position: relative;}
+
+		.name {text-align: center;}
 		.overlay {
 			position: absolute;
 			top: 0;
 			left: 0;
 		}
 
-		.image.scale-100 img, .image.scale-100 .overlay {
+		.sword.scale-100 {
+			width: 300px;
+			font-size:1.25em;
+		}
+
+		.sword.scale-50 {
+			width: 150px;
+		}
+
+		.sword.scale-33{
+			width:100px;
+			font-size: small;
+		}
+
+		.sword.scale-100 img, .sword.scale-100 .overlay {
 			width: 300px;
 			height: 300px;
 		}
 
-		.image.scale-50 img, .image.scale-50 .overlay {
+		.sword.scale-50 img, .sword.scale-50 .overlay {
 			width: 150px;
 			height: 150px;
 		}
 
-		.image.scale-33 img, .image.scale-33 .overlay {
+		.sword.scale-33 img, .sword.scale-33 .overlay {
 			width: 100px;
 			height: 100px;
 		}
@@ -96,6 +116,8 @@ div.clear {background-color: transparent;}
 
 .controls {
 	padding:2em;
+	display:flex;
+	flex-wrap:wrap;
 }
 	</style>
 
@@ -130,8 +152,8 @@ div.clear {background-color: transparent;}
 				<button id="hide" type="button"><span>Hide All</span></button>
 			</div>
 	<main>
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000003_top.png">
 				<img class="bottom hide" src="000003_bottom.png">
 			 	<div class="overlay">
@@ -149,8 +171,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Mikazuki Munechika</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000005_top.png">
 				<img class="bottom hide" src="000005_bottom.png">
 			 	<div class="overlay">
@@ -168,8 +190,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Kogitsunemaru</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000007_top.png">
 				<img class="bottom hide" src="000007_bottom.png">
 			 	<div class="overlay">
@@ -187,8 +209,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Ishikirimaru</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000009_top.png">
 				<img class="bottom hide" src="000009_bottom.png">
 			 	<div class="overlay">
@@ -206,8 +228,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Iwatooshi</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000011_top.png">
 				<img class="bottom hide" src="000011_bottom.png">
 			 	<div class="overlay">
@@ -225,8 +247,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Imanotsurugi</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000013_top.png">
 				<img class="bottom hide" src="000013_bottom.png">
 			 	<div class="overlay">
@@ -244,8 +266,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Oodenta Mitsuyo</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000015_top.png">
 				<img class="bottom hide" src="000015_bottom.png">
 			 	<div class="overlay">
@@ -263,8 +285,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Sohayanotsurugi</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000017_top.png">
 				<img class="bottom hide" src="000017_bottom.png">
 			 	<div class="overlay">
@@ -282,8 +304,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Juzumaru Tsunetsugu</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000019_top.png">
 				<img class="bottom hide" src="000019_bottom.png">
 			 	<div class="overlay">
@@ -301,8 +323,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Nikkari Aoe</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000023_top.png">
 				<img class="bottom hide" src="000023_bottom.png">
 			 	<div class="overlay">
@@ -320,8 +342,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Nakigitsune</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000025_top.png">
 				<img class="bottom hide" src="000025_bottom.png">
 			 	<div class="overlay">
@@ -339,8 +361,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Ichigo Hitofuri</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000027_top.png">
 				<img class="bottom hide" src="000027_bottom.png">
 			 	<div class="overlay">
@@ -358,8 +380,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Namazuo Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000029_top.png">
 				<img class="bottom hide" src="000029_bottom.png">
 			 	<div class="overlay">
@@ -377,8 +399,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Honebami Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000031_top.png">
 				<img class="bottom hide" src="000031_bottom.png">
 			 	<div class="overlay">
@@ -396,8 +418,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Hirano Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000033_top.png">
 				<img class="bottom hide" src="000033_bottom.png">
 			 	<div class="overlay">
@@ -415,8 +437,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Atsushi Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000035_top.png">
 				<img class="bottom hide" src="000035_bottom.png">
 			 	<div class="overlay">
@@ -434,8 +456,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Gotou Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000037_top.png">
 				<img class="bottom hide" src="000037_bottom.png">
 			 	<div class="overlay">
@@ -453,8 +475,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Shinano Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000039_top.png">
 				<img class="bottom hide" src="000039_bottom.png">
 			 	<div class="overlay">
@@ -472,8 +494,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Maeda Toushirou</div>
 		</div>
 
-				<div class="sword">
-			<div class="image scale-100">
+				<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000041_top.png">
 				<img class="bottom hide" src="000041_bottom.png">
 			 	<div class="overlay">
@@ -491,8 +513,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Akita Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000043_top.png">
 				<img class="bottom hide" src="000043_bottom.png">
 			 	<div class="overlay">
@@ -511,8 +533,8 @@ div.clear {background-color: transparent;}
 		</div>
 
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000045_top.png">
 				<img class="bottom hide" src="000045_bottom.png">
 			 	<div class="overlay">
@@ -530,8 +552,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Midare Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000047_top.png">
 				<img class="bottom hide" src="000047_bottom.png">
 			 	<div class="overlay">
@@ -549,8 +571,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Gokotai</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000049_top.png">
 				<img class="bottom hide" src="000049_bottom.png">
 			 	<div class="overlay">
@@ -568,8 +590,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Yagen Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000051_top.png">
 				<img class="bottom hide" src="000051_bottom.png">
 			 	<div class="overlay">
@@ -587,8 +609,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Houchou Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000053_top.png">
 				<img class="bottom hide" src="000053_bottom.png">
 			 	<div class="overlay">
@@ -606,8 +628,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Ookanehira</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000055_top.png">
 				<img class="bottom hide" src="000055_bottom.png">
 			 	<div class="overlay">
@@ -625,8 +647,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Uguisumaru</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000057_top.png">
 				<img class="bottom hide" src="000057_bottom.png">
 			 	<div class="overlay">
@@ -644,8 +666,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Akashi Kuniyuki</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000059_top.png">
 				<img class="bottom hide" src="000059_bottom.png">
 			 	<div class="overlay">
@@ -663,8 +685,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Hotarumaru</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000061_top.png">
 				<img class="bottom hide" src="000061_bottom.png">
 			 	<div class="overlay">
@@ -682,8 +704,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Aizen Kunitoshi</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000063_top.png">
 				<img class="bottom hide" src="000063_bottom.png">
 			 	<div class="overlay">
@@ -701,8 +723,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Sengo Muramasa</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000065_top.png">
 				<img class="bottom hide" src="000065_bottom.png">
 			 	<div class="overlay">
@@ -720,8 +742,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Tonbokiri</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000067_top.png">
 				<img class="bottom hide" src="000067_bottom.png">
 			 	<div class="overlay">
@@ -739,8 +761,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Monoyoshi Sadamune</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000069_top.png">
 				<img class="bottom hide" src="000069_bottom.png">
 			 	<div class="overlay">
@@ -758,8 +780,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Taikogane Sadamune</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000071_top.png">
 				<img class="bottom hide" src="000071_bottom.png">
 			 	<div class="overlay">
@@ -777,8 +799,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Kikkou Sadamune</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000073_top.png">
 				<img class="bottom hide" src="000073_bottom.png">
 			 	<div class="overlay">
@@ -796,8 +818,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Shokudaikiri Mitsutada</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000075_top.png">
 				<img class="bottom hide" src="000075_bottom.png">
 			 	<div class="overlay">
@@ -815,8 +837,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Daihannya Nagamitsu</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000077_top.png">
 				<img class="bottom hide" src="000077_bottom.png">
 			 	<div class="overlay">
@@ -834,8 +856,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Koryuu Kagemitsu</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000079_top.png">
 				<img class="bottom hide" src="000079_bottom.png">
 			 	<div class="overlay">
@@ -853,8 +875,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Kousetsu Samonji</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000081_top.png">
 				<img class="bottom hide" src="000081_bottom.png">
 			 	<div class="overlay">
@@ -872,8 +894,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Souza Samonji</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000083_top.png">
 				<img class="bottom hide" src="000083_bottom.png">
 			 	<div class="overlay">
@@ -891,8 +913,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Sayo Samonji</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000085_top.png">
 				<img class="bottom hide" src="000085_bottom.png">
 			 	<div class="overlay">
@@ -910,8 +932,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Kashuu Kiyomitsu</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000087_top.png">
 				<img class="bottom hide" src="000087_bottom.png">
 			 	<div class="overlay">
@@ -929,8 +951,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Yamatonokami Yasusada</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000089_top.png">
 				<img class="bottom hide" src="000089_bottom.png">
 			 	<div class="overlay">
@@ -948,8 +970,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Kasen Kanesada</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000091_top.png">
 				<img class="bottom hide" src="000091_bottom.png">
 			 	<div class="overlay">
@@ -967,8 +989,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Izuminokami Kanesada</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000093_top.png">
 				<img class="bottom hide" src="000093_bottom.png">
 			 	<div class="overlay">
@@ -986,8 +1008,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Mutsunokami Yoshiyuki</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000095_top.png">
 				<img class="bottom hide" src="000095_bottom.png">
 			 	<div class="overlay">
@@ -1005,8 +1027,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Yamanbagiri Kunihiro</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000097_top.png">
 				<img class="bottom hide" src="000097_bottom.png">
 			 	<div class="overlay">
@@ -1024,8 +1046,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Yamabushi Kunihiro</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000099_top.png">
 				<img class="bottom hide" src="000099_bottom.png">
 			 	<div class="overlay">
@@ -1043,8 +1065,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Horikawa Kunihiro</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000101_top.png">
 				<img class="bottom hide" src="000101_bottom.png">
 			 	<div class="overlay">
@@ -1062,8 +1084,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Hachisuka Kotetsu</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000103_top.png">
 				<img class="bottom hide" src="000103_bottom.png">
 			 	<div class="overlay">
@@ -1081,8 +1103,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Urashima Kotetsu</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000105_top.png">
 				<img class="bottom hide" src="000105_bottom.png">
 			 	<div class="overlay">
@@ -1100,8 +1122,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Nagasone Kotetsu</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000107_top.png">
 				<img class="bottom hide" src="000107_bottom.png">
 			 	<div class="overlay">
@@ -1119,8 +1141,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Higekiri</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000112_top.png">
 				<img class="bottom hide" src="000112_bottom.png">
 			 	<div class="overlay">
@@ -1138,8 +1160,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Hizamaru</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000116_top.png">
 				<img class="bottom hide" src="000116_bottom.png">
 			 	<div class="overlay">
@@ -1157,8 +1179,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Ookurikara</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000118_top.png">
 				<img class="bottom hide" src="000118_bottom.png">
 			 	<div class="overlay">
@@ -1176,8 +1198,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Heshikiri Hasebe</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000120_top.png">
 				<img class="bottom hide" src="000120_bottom.png">
 			 	<div class="overlay">
@@ -1195,8 +1217,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Fudou Yukimitsu</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000122_top.png">
 				<img class="bottom hide" src="000122_bottom.png">
 			 	<div class="overlay">
@@ -1214,8 +1236,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Shishiou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000124_top.png">
 				<img class="bottom hide" src="000124_bottom.png">
 			 	<div class="overlay">
@@ -1233,8 +1255,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Kogarasumaru</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000128_top.png">
 				<img class="bottom hide" src="000128_bottom.png">
 			 	<div class="overlay">
@@ -1252,8 +1274,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Doudanuki Masakuni</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000130_top.png">
 				<img class="bottom hide" src="000130_bottom.png">
 			 	<div class="overlay">
@@ -1271,8 +1293,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Tsurumaru Kuninaga</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000132_top.png">
 				<img class="bottom hide" src="000132_bottom.png">
 			 	<div class="overlay">
@@ -1290,8 +1312,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Taroutachi</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000134_top.png">
 				<img class="bottom hide" src="000134_bottom.png">
 			 	<div class="overlay">
@@ -1309,8 +1331,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Jiroutachi</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000136_top.png">
 				<img class="bottom hide" src="000136_bottom.png">
 			 	<div class="overlay">
@@ -1328,8 +1350,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Nihongou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000138_top.png">
 				<img class="bottom hide" src="000138_bottom.png">
 			 	<div class="overlay">
@@ -1347,8 +1369,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Otegine</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000140_top.png">
 				<img class="bottom hide" src="000140_bottom.png">
 			 	<div class="overlay">
@@ -1366,8 +1388,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Tomoegata Naginata</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000142_top.png">
 				<img class="bottom hide" src="000142_bottom.png">
 			 	<div class="overlay">
@@ -1385,8 +1407,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Mouri Toushirou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000144_top.png">
 				<img class="bottom hide" src="000144_bottom.png">
 			 	<div class="overlay">
@@ -1404,8 +1426,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Kotegiri Gou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000146_top.png">
 				<img class="bottom hide" src="000146_bottom.png">
 			 	<div class="overlay">
@@ -1423,8 +1445,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Kenshin Kagemitsu</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000148_top.png">
 				<img class="bottom hide" src="000148_bottom.png">
 			 	<div class="overlay">
@@ -1442,8 +1464,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Azuki Nagamitsu</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000150_top.png">
 				<img class="bottom hide" src="000150_bottom.png">
 			 	<div class="overlay">
@@ -1461,8 +1483,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Hyuuga Masamune</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000152_top.png">
 				<img class="bottom hide" src="000152_bottom.png">
 			 	<div class="overlay">
@@ -1480,8 +1502,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Shizukagata Naginata</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000154_top.png">
 				<img class="bottom hide" src="000154_bottom.png">
 			 	<div class="overlay">
@@ -1499,8 +1521,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Nansen Ichimonji</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000156_top.png">
 				<img class="bottom hide" src="000156_bottom.png">
 			 	<div class="overlay">
@@ -1518,8 +1540,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Chiyoganemaru</div>
 		</div>
 
-		<!-- <div class="sword">
-			<div class="image scale-100">
+		<!-- <div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000158_top.png">
 				<img class="bottom hide" src="000158_bottom.png">
 			 	<div class="overlay">
@@ -1537,8 +1559,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Yamanbagiri Chougi</div>
 		</div> -->
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000160_top.png">
 				<img class="bottom hide" src="000160_bottom.png">
 			 	<div class="overlay">
@@ -1556,8 +1578,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Kogitsunemaru</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000166_top.png">
 				<img class="bottom hide" src="000166_bottom.png">
 			 	<div class="overlay">
@@ -1575,8 +1597,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Nankaitarou Chouson</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000168_top.png">
 				<img class="bottom hide" src="000168_bottom.png">
 			 	<div class="overlay">
@@ -1595,8 +1617,8 @@ div.clear {background-color: transparent;}
 		</div>
 
 
-		<!-- <div class="sword">
-			<div class="image scale-100">
+		<!-- <div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000170_top.png">
 				<img class="bottom hide" src="000170_bottom.png">
 			 	<div class="overlay">
@@ -1614,8 +1636,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Chatannakiri</div>
 		</div> -->
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000172_top.png">
 				<img class="bottom hide" src="000172_bottom.png">
 			 	<div class="overlay">
@@ -1634,8 +1656,8 @@ div.clear {background-color: transparent;}
 		</div>
 
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000178_top.png">
 				<img class="bottom hide" src="000178_bottom.png">
 			 	<div class="overlay">
@@ -1654,8 +1676,8 @@ div.clear {background-color: transparent;}
 		</div>
 
 
-		<!-- <div class="sword">
-			<div class="image scale-100">
+		<!-- <div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000188_top.png">
 				<img class="bottom hide" src="000188_bottom.png">
 			 	<div class="overlay">
@@ -1673,8 +1695,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Nikkou Ichimonji</div>
 		</div> -->
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000196_top.png">
 				<img class="bottom hide" src="000196_bottom.png">
 			 	<div class="overlay">
@@ -1692,8 +1714,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Hanjin</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000236_top.png">
 				<img class="bottom hide" src="000236_bottom.png">
 			 	<div class="overlay">
@@ -1711,8 +1733,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Unshou</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000240_top.png">
 				<img class="bottom hide" src="000240_bottom.png">
 			 	<div class="overlay">
@@ -1730,8 +1752,8 @@ div.clear {background-color: transparent;}
 			<div class="name">Unji</div>
 		</div>
 
-		<div class="sword">
-			<div class="image scale-100">
+		<div class="sword scale-100">
+			<div class="image">
 				<img class="top" src="000254_top.png">
 				<img class="bottom hide" src="000254_bottom.png">
 			 	<div class="overlay">
@@ -1764,8 +1786,8 @@ div.clear {background-color: transparent;}
 
 	u('.controls fieldset input').on('change', function (e) {
 		let scale = e.currentTarget.id;
-		u('.image').removeClass('scale-100', 'scale-50', 'scale-33')
-		u('.image').addClass(scale);
+		u('.sword').removeClass('scale-100', 'scale-50', 'scale-33')
+		u('.sword').addClass(scale);
 	});
 
 	u("#show").on('click', function (e) {
@@ -1778,8 +1800,8 @@ div.clear {background-color: transparent;}
 
 	let scale = u('.controls fieldset input').filter(':checked').first().id;
 	if (scale) {
-		u('.image').removeClass('scale-100', 'scale-50', 'scale-33')
-		u('.image').addClass(scale);
+		u('.sword').removeClass('scale-100', 'scale-50', 'scale-33')
+		u('.sword').addClass(scale);
 	}
 
 

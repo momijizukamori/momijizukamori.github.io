@@ -1,5 +1,6 @@
 body {
     background-image: url("DarkBrownPatternBg.png");
+    font-family:"Delius";
 }
 
 button {
@@ -21,7 +22,8 @@ button {
     border: 0px;
     color: #1e7e14;
     font-size: 30px;
-    font-weight: 600;
+    font-weight: bolder;
+    font-family: "Delius";
     box-shadow: 1px 4px 3px 2px #7f7e79;
     fill: currentColor;
   }
@@ -117,9 +119,16 @@ button {
   border-right: 18px solid #d5d5d5;
 }
 
+.label:has(input[type="radio"]:checked)::before {
+  content:url("checkmark.png");
+  position: absolute;
+  left: 5px;
+  top:5px;
+}
+
 .label .text {
   color: white;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 12px;
   padding: 0px;
   font-weight: 800;
