@@ -1164,7 +1164,7 @@ height: 25px;}
 cy.on('tap', 'node', function(evt){
   var node = evt.target;
   console.log( 'tapped ' + node.id() + ' at ' + JSON.stringify(node.position()));
-  var noteLevel = node.data('note') != null ? (node.data('note') + 1) % 4 : 0;
+  var noteLevel = node.data('note') != null ? (node.data('note') + 1) % 4 : 1;
   console.log(noteLevel);
   node.data('note', noteLevel);
   // node.addClass('selected');
