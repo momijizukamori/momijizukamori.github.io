@@ -14,6 +14,20 @@
   height: 100dvh;
   display: block;
 }
+
+#guide {
+	width: 300px;
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	border: 2px solid black;
+	padding: 0.5rem;
+	background-color: beige;
+}
+ul {
+	padding-left:1em;
+}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.33.1/cytoscape.min.js" integrity="sha512-kHAY8XzRfLVMcLuowdk91552RD+Nb2/1uHamfHMdLejNqlZnbEJLl1wYnsNnqIFCEZ++WaOcOlfokC6p9JWrLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
@@ -22,6 +36,15 @@
 </head>
 <body>
 <div id="cy"></div>
+<div id="guide">
+	<center><b>Instructions</b></center>
+	<ul>
+		<li>Click or tap on a node to cycle through the note step counts.</li>
+		<li>Possible bomb locations will show as purple nodes.</li>
+		<li>To mark a bomb location as successfully cleared, double-click or double-tap on it to clear the data and nodes associated with it</li>
+		<li>The map can be dragged and zoomed.</li>
+	</ul>
+</div>
 	<script src="./tenedo.js"></script>
 </body>
 </html>
