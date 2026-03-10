@@ -889,6 +889,13 @@ height: 25px;}
 
 var bombSet = new Map();
 var targets = [];
+var quadrants = [
+  cy.$('#n6, #n7, #n11, #n12, #n13, #n14, #n15, #n19, #n20, #n21'),
+  cy.$('#n39, #n45, #n46, #n47, #n51, #n52, #n53, #n57, #n58, #n59, #n63'),
+  cy.$('#n61, #n62, #n66, #n67, #n71, #n72, #n73, #n76, #n77, #n79'),
+  cy.$('#n17, #n25, #n25, #n30, #n31, #n32, #n36, #n37, #n38, #n42, #n43')
+];
+
 
 cy.on("onetap", "node", function (evt) {
   var node = evt.target;
@@ -925,6 +932,12 @@ cy.on("dbltap", "node", function (evt) {
           noteNode.data("note", 0);
           bombSet.delete(note);
         }
+      }
+    });
+        // One bomb per quadrant, so if we've found it we know the others are clear
+    quadrants.forEach(function(quad){
+      if (quad.contains(node)) {
+        quad.addClass('dead');
       }
     });
   }
