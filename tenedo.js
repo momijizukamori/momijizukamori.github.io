@@ -868,23 +868,33 @@ var cy = cytoscape({
   autounselectify: true,
   multiClickDebounceTime: 200,
   style: `
-  node {shape: ellipse;
-border-color: black;
-border-width: 5px;
-width: 50px;
-height: 25px;}
+  node {
+    shape: ellipse;
+    border-color: black;
+    border-width: 5px;
+    width: 50px;
+    height: 25px;
+  }
   .bomb {background-color: purple}
-   .clear {background-color: #555;}
-  [note=0], .dead { background-color:black} 
-  [note > 0] {label: data(note);
-   background-color: red;
-   text-background-color:#fffed9;
-   text-background-opacity: 1;
-   text-background-padding: 5px;
-   text-border-color: black;
-   text-border-width: 3px;
-   text-border-opacity: 1;} 
-   .defused{background-color: #8fe397;}`,
+  .clear {background-color: #555;}
+  .dead { background-color:black} 
+  [note] {
+    text-background-color:#fffed9;
+    text-background-opacity: 1;
+    text-background-padding: 5px;
+    text-border-color: black;
+    text-border-width: 3px;
+    text-border-opacity: 1;
+  } 
+  .defused{background-color: #8fe397;}
+  [note=0]{
+    label: X;
+    background-color:#734c4f;
+  } 
+  [note>0] {
+    label: data(note);
+    background-color: red;
+  }`,
 });
 
 var bombSet = new Map();
@@ -901,21 +911,7 @@ cy.on("onetap", "node", function (evt) {
   var node = evt.target;
   var noteLevel = node.data("note") != null ? (node.data("note") + 1) % 4 : 1;
   node.data("note", noteLevel);
-  // node.addClass('selected');
-  switch (noteLevel) {
-    case 0:
-      updateBombs(node.id());
-      break;
-    case 1:
-      distance1(node);
-      break;
-    case 2:
-      distance2(node);
-      break;
-    case 3:
-      distance3(node);
-      break;
-  }
+  updateNode(node);
 });
 
 cy.on("dbltap", "node", function (evt) {
@@ -923,79 +919,108 @@ cy.on("dbltap", "node", function (evt) {
   if (node.hasClass("bomb")) {
     node.addClass("defused");
     targets.forEach(function ({ notes, bombs }, i) {
-      if (bombs.contains(node)) {
+      if (bombs && bombs.contains(node)) {
         for (let note of notes) {
-          let { bombs, clear } = bombSet.get(note);
-          bombs.addClass("dead");
-          clear.addClass("dead");
           let noteNode = cy.$id(note);
           noteNode.data("note", 0);
-          bombSet.delete(note);
+          updateNode(noteNode);
         }
       }
     });
         // One bomb per quadrant, so if we've found it we know the others are clear
     quadrants.forEach(function(quad){
       if (quad.contains(node)) {
-        quad.addClass('dead');
+        quad.addClass('clear');
       }
     });
   }
 });
 
-function distance1(node) {
-  var bombs = node.neighborhood();
-  updateBombs(node.id(), bombs, cy.$(node));
+function updateNode(node) {
+  let noteLevel = node.data('note');
+  let [bombs, clear] = [null, null];
+  switch (noteLevel) {
+    case 0:
+      //no note = same logic as 3, except all nodes are clear.
+      [bombs, clear] = distance3(node);
+      clear = clear.union(bombs);
+      bombs = null;
+      break;
+    case 1:
+      bombs = node.neighborhood();
+      clear = cy.nodes(node);
+      break;
+    case 2:
+      [bombs, clear] = distance2(node);
+      break;
+    case 3:
+      [bombs, clear] = distance3(node);
+      break;
+  }
+  updateBombs(node.id(), bombs, clear);
 }
 
 function distance2(node) {
   var first = node.neighborhood();
   var second = first.neighborhood();
+
   var clear = first.union(node);
   var bombs = second.difference(clear);
-  updateBombs(node.id(), bombs, clear);
+
+  return [bombs, clear];
 }
 
 function distance3(node) {
   var first = node.neighborhood();
   var second = first.neighborhood();
   var third = second.neighborhood();
+
   var clear = second.union(first).union(node);
   var bombs = third.difference(clear);
-  updateBombs(node.id(), bombs, clear);
+
+  return [bombs, clear];
 }
 
 function updateBombs(id, bombs, clear) {
-  cy.$(".bomb").removeClass("bomb");
+  let dead = cy.nodes('.dead');
+  cy.nodes(".bomb").removeClass("bomb");
   let nodes = bombSet.get(id);
   if (nodes && nodes.clear) {
     nodes.clear.removeClass("clear");
   }
-  if (bombs == null) {
-    bombSet.delete(id);
-  } else {
+
     bombSet.set(id, { bombs: bombs, clear: clear });
-  }
+
   targets = [];
   bombSet.forEach(function (nodes, noteId) {
     let foundIntersection = false;
     nodes.clear.addClass("clear");
-    targets.forEach(function ({ notes, bombs }, i) {
-      if (bombs && bombs.anySame(nodes.bombs)) {
-        foundIntersection = true;
-        targets[i] = {
-          notes: notes.concat([noteId]),
-          bombs: bombs.intersection(nodes.bombs),
-        };
+    var i = 0;
+    for (const target of targets) {
+      let { notes, bombs } = target;
+      if (bombs && nodes.bombs) {
+        let targetBombs = bombs.difference(dead).filter('node');
+        let testBombs = nodes.bombs.difference(dead).filter('node');
+        foundIntersection = targetBombs.anySame(testBombs);
+        if (foundIntersection) {
+         
+          targets[i] = {
+            notes: notes.concat([noteId]),
+            bombs: targetBombs.intersection(testBombs),
+          };
+          break;
+        }
+        i++;
       }
-    });
+    };
     // Doesn't fit with an existing group of bomb possibilities, make a new one
     if (!foundIntersection) {
       targets.push({ notes: [noteId], bombs: nodes.bombs });
     }
   });
-  var dead = cy.nodes(".dead, [note=0], .clear");
+  var empty = cy.nodes(".dead, .clear");
   targets.forEach(function (targetGroup) {
-    targetGroup.bombs.difference(dead).addClass("bomb");
+    if (targetGroup.bombs) {    targetGroup.bombs.difference(empty).addClass("bomb");}
+
   });
 }
