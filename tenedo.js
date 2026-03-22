@@ -866,7 +866,6 @@ var cy = cytoscape({
   layout: { name: "preset" },
   autolock: true,
   autounselectify: true,
-  multiClickDebounceTime: 200,
   style: `
   node {
     shape: ellipse;
@@ -900,12 +899,38 @@ var cy = cytoscape({
 var bombSet = new Map();
 var targets = [];
 var quadrants = [
-  cy.$('#n6, #n7, #n11, #n12, #n13, #n14, #n15, #n19, #n20, #n21'),
-  cy.$('#n39, #n45, #n46, #n47, #n51, #n52, #n53, #n57, #n58, #n59, #n63'),
-  cy.$('#n61, #n62, #n66, #n67, #n71, #n72, #n73, #n76, #n77, #n79'),
-  cy.$('#n17, #n25, #n25, #n30, #n31, #n32, #n36, #n37, #n38, #n42, #n43')
+  {
+    clear: false,
+    nodes: cy.$("#n6, #n7, #n11, #n12, #n13, #n14, #n15, #n19, #n20, #n21"),
+  },
+  {
+    clear: false,
+    nodes: cy.$(
+      "#n39, #n45, #n46, #n47, #n51, #n52, #n53, #n57, #n58, #n59, #n63"
+    ),
+  },
+  {
+    clear: false,
+    nodes: cy.$("#n61, #n62, #n66, #n67, #n71, #n72, #n73, #n76, #n77, #n79"),
+  },
+  {
+    clear: false,
+    nodes: cy.$(
+      "#n17, #n25, #n25, #n30, #n31, #n32, #n36, #n37, #n38, #n42, #n43"
+    ),
+  },
 ];
 
+function printNodeList(nodes) {
+  var getNodeId = function (n) {
+    return n.id();
+  };
+  if (nodes) {
+    return nodes.map(getNodeId).join(", ");
+  } else {
+    return "";
+  }
+}
 
 cy.on("onetap", "node", function (evt) {
   var node = evt.target;
@@ -918,26 +943,31 @@ cy.on("dbltap", "node", function (evt) {
   var node = evt.target;
   if (node.hasClass("bomb")) {
     node.addClass("defused");
-    targets.forEach(function ({ notes, bombs }, i) {
+    let [bombs, clear] = distance3(node);
+    node.data("clear", clear.union(bombs));
+    cy.nodes("[bombs]").forEach(function (noteNode) {
+      let bombs = noteNode.data("bombs");
       if (bombs && bombs.contains(node)) {
-        for (let note of notes) {
-          let noteNode = cy.$id(note);
-          noteNode.data("note", 0);
-          updateNode(noteNode);
-        }
+        noteNode.data("note", 0);
+        noteNode.data("clear", bombs.union(noteNode.data("clear")));
+        noteNode.data("bombs", null);
+        noteNode.removeData('multiQuad quad0 quad1 quad2 quad3');
       }
     });
-        // One bomb per quadrant, so if we've found it we know the others are clear
-    quadrants.forEach(function(quad){
-      if (quad.contains(node)) {
-        quad.addClass('clear');
+
+    // One bomb per quadrant, so if we've found it we know the others are clear
+    quadrants.forEach(function (quad) {
+      if (quad.nodes.contains(node)) {
+        quad.clear = true;
+        quad.nodes.addClass("clear");
       }
     });
   }
+  update();
 });
 
 function updateNode(node) {
-  let noteLevel = node.data('note');
+  let noteLevel = node.data("note");
   let [bombs, clear] = [null, null];
   switch (noteLevel) {
     case 0:
@@ -957,7 +987,28 @@ function updateNode(node) {
       [bombs, clear] = distance3(node);
       break;
   }
-  updateBombs(node.id(), bombs, clear);
+  let targets = bombs
+    ? bombs.difference(clear.union(cy.nodes(".dead, .clear")))
+    : null;
+  quadrants.forEach(function (quad, i) {
+    if (quad.nodes.anySame(targets)) {
+      node.data(`quad${i}`, true);
+    }
+  });
+
+  // Has to be a seperate step from above, because otherwise quad 3 flags
+  // won't have been set yet when we check quad 0
+  for (const currQuad of [0, 1, 2, 3]) {
+    const prevQuad = currQuad == 0 ? 3 : currQuad - 1;
+
+    if (node.data(`quad${prevQuad}`) && node.data(`quad${currQuad}`)) {
+      node.data("multiQuad", true);
+    }
+  }
+
+  node.data("bombs", bombs);
+  node.data("clear", clear);
+  update();
 }
 
 function distance2(node) {
@@ -981,46 +1032,133 @@ function distance3(node) {
   return [bombs, clear];
 }
 
-function updateBombs(id, bombs, clear) {
-  let dead = cy.nodes('.dead');
+function update() {
   cy.nodes(".bomb").removeClass("bomb");
-  let nodes = bombSet.get(id);
-  if (nodes && nodes.clear) {
-    nodes.clear.removeClass("clear");
-  }
+  cy.nodes(".clear").removeClass("clear");
+  let clearDataNodes = cy.nodes("[clear]");
 
-    bombSet.set(id, { bombs: bombs, clear: clear });
+  let clearNodes = null;
 
-  targets = [];
-  bombSet.forEach(function (nodes, noteId) {
-    let foundIntersection = false;
-    nodes.clear.addClass("clear");
-    var i = 0;
-    for (const target of targets) {
-      let { notes, bombs } = target;
-      if (bombs && nodes.bombs) {
-        let targetBombs = bombs.difference(dead).filter('node');
-        let testBombs = nodes.bombs.difference(dead).filter('node');
-        foundIntersection = targetBombs.anySame(testBombs);
-        if (foundIntersection) {
-         
-          targets[i] = {
-            notes: notes.concat([noteId]),
-            bombs: targetBombs.intersection(testBombs),
-          };
-          break;
-        }
-        i++;
-      }
-    };
-    // Doesn't fit with an existing group of bomb possibilities, make a new one
-    if (!foundIntersection) {
-      targets.push({ notes: [noteId], bombs: nodes.bombs });
+  clearDataNodes.forEach(function (node) {
+    if (clearNodes) {
+      clearNodes = clearNodes.union(node.data("clear"));
+    } else {
+      clearNodes = node.data("clear");
     }
   });
-  var empty = cy.nodes(".dead, .clear");
-  targets.forEach(function (targetGroup) {
-    if (targetGroup.bombs) {    targetGroup.bombs.difference(empty).addClass("bomb");}
 
+  clearNodes.addClass("clear");
+
+  quadrants.forEach(function (quad) {
+    if (quad.clear) {
+      quad.nodes.addClass("clear");
+    }
   });
+
+  let quadTargets = [null, null, null, null];
+  const multiQuad = cy.nodes("[multiQuad]");
+  const cleared = cy.nodes(".clear, .dead");
+  let provisionalTargets = null;
+  console.debug("Current multi-quadrant nodes: ", printNodeList(multiQuad));
+
+  // calculate intersections for notes that don't cross quadrant boundaries
+  for (const i of [0, 1, 2, 3]) {
+    let quadNotes = cy.$(`[quad${i}]`);
+    let singleQuadNotes = quadNotes.difference(multiQuad);
+
+    let quadBombNodes = null;
+    // notes pointing to bombs in a single quadrant must be pointing to
+    // the *same* bomb and thus their target lists must intersect
+    singleQuadNotes.forEach(function (node) {
+      if (node.data("bombs")) {
+        let targets = node.data("bombs").difference(cleared);
+        if (quadBombNodes) {
+          quadBombNodes = quadBombNodes.intersection(targets).filter("node");
+        } else {
+          quadBombNodes = targets;
+        }
+      }
+    });
+    quadTargets[i] = quadBombNodes;
+  }
+
+  // Now we handle the notes that *do* cross quadrants.
+  // We try to determine their quadrant by seeing how they overlap
+  // with the single-quad data.
+
+  for (const i of [0, 1, 2, 3]) {
+    const nextQuad = i == 3 ? 0 : i + 1;
+    let quadNotes = multiQuad.nodes(`[quad${i}]`).nodes(`[quad${nextQuad}]`);
+    let currTargets = quadTargets[i];
+    let nextTargets = quadTargets[nextQuad];
+
+    quadNotes.forEach(function (node) {
+      if (node.data("bombs")) {
+        const nodeTargets = node.data("bombs").difference(cleared);
+        let intersectsCurrent =
+          !currTargets || currTargets.anySame(nodeTargets);
+        let intersectsNext = !nextTargets || nextTargets.anySame(nodeTargets);
+
+        // simplest case, it only matches one side and we know where this goes now
+        if (intersectsCurrent != intersectsNext) {
+          let assumedQuad = intersectsCurrent ? i : nextQuad;
+          if (quadTargets[assumedQuad]) {
+            quadTargets[assumedQuad] = quadTargets[assumedQuad]
+              .intersection(nodeTargets)
+              .filter("node");
+          } else {
+            quadTargets[assumedQuad] = nodeTargets;
+          }
+
+          // FIXME: this is clearing weirdly after additional data is added
+          // nodeTargets.difference(quadTargets[assumedQuad]).addClass('clear');
+        } else {
+          // we don't know, and we need to either add data if one quadrant is empty, or do nothing
+          // (if it overlaps existing data sets in both nodes, those sets will already be narrowed)
+          if (!currTargets) {
+            quadTargets[i] = quadrants[i].nodes
+              .intersection(nodeTargets)
+              .filter("node")
+              .union(provisionalTargets);
+          }
+          if (!nextTargets) {
+            quadTargets[nextQuad] = quadrants[nextQuad].nodes
+              .intersection(nodeTargets)
+              .filter("node")
+              .union(provisionalTargets);
+          }
+        }
+      }
+    });
+  }
+
+  for (const targets of quadTargets) {
+    // console.log(printNodeList(targets))
+    if (targets) {
+      targets.addClass("bomb");
+    }
+  }
+}
+
+function debugPrint() {
+  var bombSetText = ["Bomb Set"];
+  bombSet.forEach(function (nodes, noteId) {
+    let text = `${noteId}: Bombs[${printNodeList(
+      nodes.bombs
+    )}], Clears[${printNodeList(nodes.clear)}]`;
+    bombSetText.push(text);
+  });
+  // console.log(bombSetText.join(`\n`));
+
+  var targetText = ["Targets"];
+  targets.forEach(function ({ notes, bombs }, i) {
+    let text = `Notes: [${notes.join(", ")}], Targets: [${printNodeList(
+      bombs
+    )}]`;
+    targetText.push(text);
+  });
+
+  // console.log(targetText.join(`\n`));
+  document.getElementById("debug").innerHTML =
+    bombSetText.join(`<br>`) + "<br>" + targetText.join(`<br>`);
 }

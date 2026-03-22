@@ -15,16 +15,20 @@
   display: block;
 }
 
-#guide {
+#guide, #debug {
 	width: 300px;
 	display: block;
 	position: absolute;
 	top: 20px;
-	left: 20px;
+
 	border: 2px solid black;
 	padding: 0.5rem;
 	background-color: beige;
 }
+
+#guide { left: 20px;}
+#debug { right: 20px; display: none;}
+
 ul {
 	padding-left:1em;
 }
@@ -45,6 +49,7 @@ ul {
 		<li>The map can be dragged and zoomed.</li>
 	</ul>
 </div>
+<div id="debug"></div>
 	<script src="./tenedo.js"></script>
 </body>
 </html>
