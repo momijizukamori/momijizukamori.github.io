@@ -1,0 +1,110 @@
+<html lang="en">
+
+<head>
+    <title>TKRB Wiki Recollection Formatter</title>
+    <style>
+        main {
+            max-width: 80em;
+        }
+
+        main,
+        button,
+        textarea,
+        label {
+            margin: auto;
+        }
+
+        label {
+            display: inline-block;
+        }
+
+        textarea {
+            width: 80%;
+            display: block;
+            height: 30em;
+        }
+
+        button {
+            display: block;
+            margin: 2em auto;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2>TKRB Wiki Recollection Formatter</h2>
+        <p>Takes the browser JSON response for recollections and formats it it to be pasted into the <a
+                href="https://touken-ranbu.fandom.com/">TKRB wiki</a>. Recollection data is available by opening the dev tools network tab (Ctrl + Shift + e) before triggering the recollection, and looking for a request to <code>https://w011.touken-ranbu.jp/scene/reproduce</code> - the response to that is the JSON to be pasted into the input box.</p>
+        <div><label>Recollection ID: <input type="text" id="recoll_id"></input></label></div>
+        <textarea id="input" name="input"></textarea>
+        <button type="button" id="process">Process input</button>
+        <textarea id="output" name="output" readonly></textarea>
+    </main>
+    <script type="module">
+        import sword_names from './sword_data/name_long.json' with {type: "json"};
+
+
+        const output = document.getElementById('output');
+        document.getElementById('process').addEventListener('click', (e) => {
+            const inputText = document.getElementById('input').value;
+            const recoll_id = document.getElementById('recoll_id').value || "###";
+
+            const inputData = JSON.parse(inputText);
+
+            const swords = new Map();
+
+
+            inputData.script.objects.forEach((obj) => {
+                if (obj.type == 'sword') {
+                    swords.set(obj.key, sword_names[obj.sword_id]);
+                }
+            });
+
+            // add sword lookup step or something
+            const header = `
+==PART ${recoll_id}==
+{{Recollection
+|Title = PART ${recoll_id}: 
+|Era = 
+|Image name = Recollection${recoll_id}.png
+|Area = `;
+            const convo = [header]
+            let i = 1;
+            swords.forEach((sword) => {
+                convo.push(`|Sword ${i} = [[${sword}]]`);
+                i = i + 1;
+            });
+
+            convo.push("}}");
+            convo.push("{{Convo Opening}}");
+
+            inputData.script.play.forEach((action) => {
+                if (action.message_play) {
+                    const text = action.message_play.text.replace("\u300c", '').replace("\u300d", '');
+                    const sword = action.message_play.sword_key;
+                    let voice = null;
+                    if (action.message_play.voice_key) {
+                        voice = action.message_play.voice_key.replace('voice-', '');
+                    } else if (action.voice_play) {
+                        voice = action.voice_play[0].key.replace('voice-', '');
+                    }
+                    const audio_file = voice ? `Recoll${recoll_id}-${voice}.ogg` : '';
+                    const msg = `{{Convo Area
+|Sword = ${swords.get(sword)}
+|JP = ${text}
+|EN = 
+|Audio = ${audio_file}}}`;
+                    convo.push(msg)
+                }
+            });
+
+            convo.push(`{{Convo Closing}}`);
+
+            output.value = convo.join('\n');
+        });
+    </script>
+</body>
+
+</html>

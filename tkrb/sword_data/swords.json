@@ -1,0 +1,2142 @@
+{
+  "3": {
+    "name_jp": "三日月宗近",
+    "name_kana": "みかづきむねちか",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Sanjou",
+    "name_en": "Mikazuki Munechika",
+    "name_short": "Mikazuki"
+  },
+  "4": {
+    "name_jp": "三日月宗近",
+    "name_kana": "みかづきむねちか",
+    "kiwame": true,
+    "rarity": "6",
+    "type": "tachi",
+    "school": "Sanjou",
+    "name_en": "Mikazuki Munechika Kiwame",
+    "name_short": "Mikazuki-kiwame"
+  },
+  "5": {
+    "name_jp": "小狐丸",
+    "name_kana": "こぎつねまる",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": "Sanjou",
+    "name_en": "Kogitsunemaru",
+    "name_short": "Kogitsunemaru"
+  },
+  "6": {
+    "name_jp": "小狐丸",
+    "name_kana": "こぎつねまる",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Sanjou",
+    "name_en": "Kogitsunemaru Kiwame",
+    "name_short": "Kogitsunemaru-kiwame"
+  },
+  "7": {
+    "name_jp": "石切丸",
+    "name_kana": "いしきりまる",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "oodachi",
+    "school": "Sanjou",
+    "name_en": "Ishikirimaru",
+    "name_short": "Ishikirimaru"
+  },
+  "8": {
+    "name_jp": "石切丸",
+    "name_kana": "いしきりまる",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "oodachi",
+    "school": "Sanjou",
+    "name_en": "Ishikirimaru Kiwame",
+    "name_short": "Ishikirimaru-kiwame"
+  },
+  "9": {
+    "name_jp": "岩融",
+    "name_kana": "いわとおし",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "naginata",
+    "school": "Sanjou",
+    "name_en": "Iwatooshi",
+    "name_short": "Iwatooshi"
+  },
+  "10": {
+    "name_jp": "岩融",
+    "name_kana": "いわとおし",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "naginata",
+    "school": "Sanjou",
+    "name_en": "Iwatooshi Kiwame",
+    "name_short": "Iwatooshi-kiwame"
+  },
+  "11": {
+    "name_jp": "今剣",
+    "name_kana": "いまのつるぎ",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Sanjou",
+    "name_en": "Imanotsurugi",
+    "name_short": "Imanotsurugi"
+  },
+  "12": {
+    "name_jp": "今剣",
+    "name_kana": "いまのつるぎ",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Sanjou",
+    "name_en": "Imanotsurugi Kiwame",
+    "name_short": "Imanotsurugi-kiwame"
+  },
+  "13": {
+    "name_jp": "大典太光世",
+    "name_kana": "おおでんたみつよ",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Miike",
+    "name_en": "Oodenta Mitsuyo",
+    "name_short": "Oodenta"
+  },
+  "14": {
+    "name_jp": "大典太光世",
+    "name_kana": "おおでんたみつよ",
+    "kiwame": true,
+    "rarity": "6",
+    "type": "tachi",
+    "school": "Miike",
+    "name_en": "Oodenta Mitsuyo Kiwame",
+    "name_short": "Oodenta-kiwame"
+  },
+  "15": {
+    "name_jp": "ソハヤノツルキ",
+    "name_kana": "そはやのつるぎ",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": "Miike",
+    "name_en": "Sohayanotsurugi",
+    "name_short": "Sohayanotsurugi"
+  },
+  "16": {
+    "name_jp": "ソハヤノツルキ",
+    "name_kana": "そはやのつるぎ",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Miike",
+    "name_en": "Sohayanotsurugi Kiwame",
+    "name_short": "Sohayanotsurugi-kiwame"
+  },
+  "17": {
+    "name_jp": "数珠丸恒次",
+    "name_kana": "じゅずまるつねつぐ",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Aoe",
+    "name_en": "Juzumaru Tsunetsugu",
+    "name_short": "Juzumaru"
+  },
+  "18": {
+    "name_jp": "数珠丸恒次",
+    "name_kana": "じゅずまるつねつぐ",
+    "kiwame": true,
+    "rarity": "6",
+    "type": "tachi",
+    "school": "Aoe",
+    "name_en": "Juzumaru Tsunetsugu Kiwame",
+    "name_short": "Juzumaru-kiwame"
+  },
+  "19": {
+    "name_jp": "にっかり青江",
+    "name_kana": "にっかりあおえ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": "Aoe",
+    "name_en": "Nikkari Aoe",
+    "name_short": "Nikkari"
+  },
+  "20": {
+    "name_jp": "にっかり青江",
+    "name_kana": "にっかりあおえ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "wakizashi",
+    "school": "Aoe",
+    "name_en": "Nikkari Aoe Kiwame",
+    "name_short": "Nikkari-kiwame"
+  },
+  "21": {
+    "name_jp": "鬼丸国綱",
+    "name_kana": "おにまるくにつな",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Awataguchi",
+    "name_en": "Onimaru Kunitsuna",
+    "name_short": "Onimaru"
+  },
+  "22": {
+    "name_jp": "鬼丸国綱",
+    "name_kana": "おにまるくにつな",
+    "kiwame": true,
+    "rarity": "6",
+    "type": "tachi",
+    "school": "Awataguchi",
+    "name_en": "Onimaru Kunitsuna Kiwame",
+    "name_short": "Onimaru-kiwame"
+  },
+  "23": {
+    "name_jp": "鳴狐",
+    "name_kana": "なきぎつね",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Awataguchi",
+    "name_en": "Nakigitsune",
+    "name_short": "Nakigitsune"
+  },
+  "24": {
+    "name_jp": "鳴狐",
+    "name_kana": "なきぎつね",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Awataguchi",
+    "name_en": "Nakigitsune Kiwame",
+    "name_short": "Nakigitsune-kiwame"
+  },
+  "25": {
+    "name_jp": "一期一振",
+    "name_kana": "いちごひとふり",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Awataguchi",
+    "name_en": "Ichigo Hitofuri",
+    "name_short": "Ichigo"
+  },
+  "26": {
+    "name_jp": "一期一振",
+    "name_kana": "いちごひとふり",
+    "kiwame": true,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Awataguchi",
+    "name_en": "Ichigo Hitofuri Kiwame",
+    "name_short": "Ichigo-kiwame"
+  },
+  "27": {
+    "name_jp": "鯰尾藤四郎",
+    "name_kana": "なまずおとうしろう",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": "Awataguchi",
+    "name_en": "Namazuo Toushirou",
+    "name_short": "Namazuo"
+  },
+  "28": {
+    "name_jp": "鯰尾藤四郎",
+    "name_kana": "なまずおとうしろう",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "wakizashi",
+    "school": "Awataguchi",
+    "name_en": "Namazuo Toushirou Kiwame",
+    "name_short": "Namazuo-kiwame"
+  },
+  "29": {
+    "name_jp": "骨喰藤四郎",
+    "name_kana": "ほねばみとうしろう",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": "Awataguchi",
+    "name_en": "Honebami Toushirou",
+    "name_short": "Honebami"
+  },
+  "30": {
+    "name_jp": "骨喰藤四郎",
+    "name_kana": "ほねばみとうしろう",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "wakizashi",
+    "school": "Awataguchi",
+    "name_en": "Honebami Toushirou Kiwame",
+    "name_short": "Honebami-kiwame"
+  },
+  "31": {
+    "name_jp": "平野藤四郎",
+    "name_kana": "ひらのとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Hirano Toushirou",
+    "name_short": "Hirano"
+  },
+  "32": {
+    "name_jp": "平野藤四郎",
+    "name_kana": "ひらのとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Hirano Toushirou Kiwame",
+    "name_short": "Hirano-kiwame"
+  },
+  "33": {
+    "name_jp": "厚藤四郎",
+    "name_kana": "あつしとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Atsushi Toushirou",
+    "name_short": "Atsu"
+  },
+  "34": {
+    "name_jp": "厚藤四郎",
+    "name_kana": "あつしとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Atsushi Toushirou Kiwame",
+    "name_short": "Atsu-kiwame"
+  },
+  "35": {
+    "name_jp": "後藤藤四郎",
+    "name_kana": "ごとうとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Gotou Toushirou",
+    "name_short": "Gotou"
+  },
+  "36": {
+    "name_jp": "後藤藤四郎",
+    "name_kana": "ごとうとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Gotou Toushirou Kiwame",
+    "name_short": "Gotou-kiwame"
+  },
+  "37": {
+    "name_jp": "信濃藤四郎",
+    "name_kana": "しなのとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Shinano Toushirou",
+    "name_short": "Shinano"
+  },
+  "38": {
+    "name_jp": "信濃藤四郎",
+    "name_kana": "しなのとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Shinano Toushirou Kiwame",
+    "name_short": "Shinano-kiwame"
+  },
+  "39": {
+    "name_jp": "前田藤四郎",
+    "name_kana": "まえだとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Maeda Toushirou",
+    "name_short": "Maeda"
+  },
+  "40": {
+    "name_jp": "前田藤四郎",
+    "name_kana": "まえだとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Maeda Toushirou Kiwame",
+    "name_short": "Maeda-kiwame"
+  },
+  "41": {
+    "name_jp": "秋田藤四郎",
+    "name_kana": "あきたとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Akita Toushirou",
+    "name_short": "Akita"
+  },
+  "42": {
+    "name_jp": "秋田藤四郎",
+    "name_kana": "あきたとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Akita Toushirou Kiwame",
+    "name_short": "Akita-kiwame"
+  },
+  "43": {
+    "name_jp": "博多藤四郎",
+    "name_kana": "はかたとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Hakata Toushirou",
+    "name_short": "Hakata"
+  },
+  "44": {
+    "name_jp": "博多藤四郎",
+    "name_kana": "はかたとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Hakata Toushirou Kiwame",
+    "name_short": "Hakata-kiwame"
+  },
+  "45": {
+    "name_jp": "乱藤四郎",
+    "name_kana": "みだれとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Midare Toushirou",
+    "name_short": "Midare"
+  },
+  "46": {
+    "name_jp": "乱藤四郎",
+    "name_kana": "みだれとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Midare Toushirou Kiwame",
+    "name_short": "Midare-kiwame"
+  },
+  "47": {
+    "name_jp": "五虎退",
+    "name_kana": "ごこたい",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Gokotai",
+    "name_short": "Gokotai"
+  },
+  "48": {
+    "name_jp": "五虎退",
+    "name_kana": "ごこたい",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Gokotai Kiwame",
+    "name_short": "Gokotai-kiwame"
+  },
+  "49": {
+    "name_jp": "薬研藤四郎",
+    "name_kana": "やげんとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Yagen Toushirou",
+    "name_short": "Yagen"
+  },
+  "50": {
+    "name_jp": "薬研藤四郎",
+    "name_kana": "やげんとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Yagen Toushirou Kiwame",
+    "name_short": "Yagen-kiwame"
+  },
+  "51": {
+    "name_jp": "包丁藤四郎",
+    "name_kana": "ほうちょうとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Houchou Toushirou",
+    "name_short": "Houchou"
+  },
+  "52": {
+    "name_jp": "包丁藤四郎",
+    "name_kana": "ほうちょうとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Houchou Toushirou Kiwame",
+    "name_short": "Houchou-kiwame"
+  },
+  "53": {
+    "name_jp": "大包平",
+    "name_kana": "おおかねひら",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Kobizen",
+    "name_en": "Ookanehira",
+    "name_short": "Ookanehira"
+  },
+  "54": {
+    "name_jp": "大包平",
+    "name_kana": "おおかねひら",
+    "kiwame": true,
+    "rarity": "6",
+    "type": "tachi",
+    "school": "Kobizen",
+    "name_en": "Ookanehira Kiwame",
+    "name_short": "Ookanehira-kiwame"
+  },
+  "55": {
+    "name_jp": "鶯丸",
+    "name_kana": "うぐいすまる",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Kobizen",
+    "name_en": "Uguisumaru",
+    "name_short": "Uguisumaru"
+  },
+  "56": {
+    "name_jp": "鶯丸",
+    "name_kana": "うぐいすまる",
+    "kiwame": true,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Kobizen",
+    "name_en": "Uguisumaru Kiwame",
+    "name_short": "Uguisumaru-kiwame"
+  },
+  "57": {
+    "name_jp": "明石国行",
+    "name_kana": "あかしくにゆき",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": "Rai",
+    "name_en": "Akashi Kuniyuki",
+    "name_short": "Akashi"
+  },
+  "58": {
+    "name_jp": "明石国行",
+    "name_kana": "あかしくにゆき",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Rai",
+    "name_en": "Akashi Kuniyuki Kiwame",
+    "name_short": "Akashi-kiwame"
+  },
+  "59": {
+    "name_jp": "蛍丸",
+    "name_kana": "ほたるまる",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "oodachi",
+    "school": "Rai",
+    "name_en": "Hotarumaru",
+    "name_short": "Hotarumaru"
+  },
+  "60": {
+    "name_jp": "蛍丸",
+    "name_kana": "ほたるまる",
+    "kiwame": true,
+    "rarity": "5",
+    "type": "oodachi",
+    "school": "Rai",
+    "name_en": "Hotarumaru Kiwame",
+    "name_short": "Hotarumaru-kiwame"
+  },
+  "61": {
+    "name_jp": "愛染国俊",
+    "name_kana": "あいぜんくにとし",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Rai",
+    "name_en": "Aizen Kunitoshi",
+    "name_short": "Aizen"
+  },
+  "62": {
+    "name_jp": "愛染国俊",
+    "name_kana": "あいぜんくにとし",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Rai",
+    "name_en": "Aizen Kunitoshi Kiwame",
+    "name_short": "Aizen-kiwame"
+  },
+  "63": {
+    "name_jp": "千子村正",
+    "name_kana": "せんごむらまさ",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Muramasa",
+    "name_en": "Sengo Muramasa",
+    "name_short": "Sengo"
+  },
+  "64": {
+    "name_jp": "千子村正",
+    "name_kana": "せんごむらまさ",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "uchigatana",
+    "school": "Muramasa",
+    "name_en": "Sengo Muramasa Kiwame",
+    "name_short": "Sengo-kiwame"
+  },
+  "65": {
+    "name_jp": "蜻蛉切",
+    "name_kana": "とんぼきり",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "yari",
+    "school": "Muramasa",
+    "name_en": "Tonbokiri",
+    "name_short": "Tonbokiri"
+  },
+  "66": {
+    "name_jp": "蜻蛉切",
+    "name_kana": "とんぼきり",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "yari",
+    "school": "Muramasa",
+    "name_en": "Tonbokiri Kiwame",
+    "name_short": "Tonbokiri-kiwame"
+  },
+  "67": {
+    "name_jp": "物吉貞宗",
+    "name_kana": "ものよしさだむね",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": "Sadamune",
+    "name_en": "Monoyoshi Sadamune",
+    "name_short": "Monoyoshi"
+  },
+  "68": {
+    "name_jp": "物吉貞宗",
+    "name_kana": "ものよしさだむね",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "wakizashi",
+    "school": "Sadamune",
+    "name_en": "Monoyoshi Sadamune Kiwame",
+    "name_short": "Monoyoshi-kiwame"
+  },
+  "69": {
+    "name_jp": "太鼓鐘貞宗",
+    "name_kana": "たいこがねさだむね",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Sadamune",
+    "name_en": "Taikogane Sadamune",
+    "name_short": "Taikogane"
+  },
+  "70": {
+    "name_jp": "太鼓鐘貞宗",
+    "name_kana": "たいこがねさだむね",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Sadamune",
+    "name_en": "Taikogane Sadamune Kiwame",
+    "name_short": "Taikogane-kiwame"
+  },
+  "71": {
+    "name_jp": "亀甲貞宗",
+    "name_kana": "きっこうさだむね",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Sadamune",
+    "name_en": "Kikkou Sadamune",
+    "name_short": "Kikkou"
+  },
+  "72": {
+    "name_jp": "亀甲貞宗",
+    "name_kana": "きっこうさだむね",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Sadamune",
+    "name_en": "Kikkou Sadamune Kiwame",
+    "name_short": "Kikkou-kiwame"
+  },
+  "73": {
+    "name_jp": "燭台切光忠",
+    "name_kana": "しょくだいきりみつただ",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": "Osafune",
+    "name_en": "Shokudaikiri Mitsutada",
+    "name_short": "Shokudaikiri"
+  },
+  "74": {
+    "name_jp": "燭台切光忠",
+    "name_kana": "しょくだいきりみつただ",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Osafune",
+    "name_en": "Shokudaikiri Kiwame",
+    "name_short": "Shokudaikiri-kiwame"
+  },
+  "75": {
+    "name_jp": "大般若長光",
+    "name_kana": "だいはんにゃながみつ",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Osafune",
+    "name_en": "Daihannya Nagamitsu",
+    "name_short": "Daihannya"
+  },
+  "76": {
+    "name_jp": "大般若長光",
+    "name_kana": "だいはんにゃながみつ",
+    "kiwame": true,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Osafune",
+    "name_en": "Daihannya Nagamitsu Kiwame",
+    "name_short": "Daihannya-kiwame"
+  },
+  "77": {
+    "name_jp": "小竜景光",
+    "name_kana": "こりゅうかげみつ",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Osafune",
+    "name_en": "Koryuu Kagemitsu",
+    "name_short": "Koryuu"
+  },
+  "78": {
+    "name_jp": "小竜景光",
+    "name_kana": "こりゅうかげみつ",
+    "kiwame": true,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Osafune",
+    "name_en": "Koryuu Kagemitsu Kiwame",
+    "name_short": "Koryuu-kiwame"
+  },
+  "79": {
+    "name_jp": "江雪左文字",
+    "name_kana": "こうせつさもんじ",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Samonji",
+    "name_en": "Kousetsu Samonji",
+    "name_short": "Kousetsu"
+  },
+  "80": {
+    "name_jp": "江雪左文字",
+    "name_kana": "こうせつさもんじ",
+    "kiwame": true,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Samonji",
+    "name_en": "Kousetsu Samonji Kiwame",
+    "name_short": "Kousetsu-kiwame"
+  },
+  "81": {
+    "name_jp": "宗三左文字",
+    "name_kana": "そうざさもんじ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Samonji",
+    "name_en": "Souza Samonji",
+    "name_short": "Souza"
+  },
+  "82": {
+    "name_jp": "宗三左文字",
+    "name_kana": "そうざさもんじ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Samonji",
+    "name_en": "Souza Samonji Kiwame",
+    "name_short": "Souza-kiwame"
+  },
+  "83": {
+    "name_jp": "小夜左文字",
+    "name_kana": "さよさもんじ",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Samonji",
+    "name_en": "Sayo Samonji",
+    "name_short": "Sayo"
+  },
+  "84": {
+    "name_jp": "小夜左文字",
+    "name_kana": "さよさもんじ",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Samonji",
+    "name_en": "Sayo Samonji Kiwame",
+    "name_short": "Sayo-kiwame"
+  },
+  "85": {
+    "name_jp": "加州清光",
+    "name_kana": "かしゅうきよみつ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Kashuu Kiyomitsu",
+    "name_short": "Kashuu"
+  },
+  "86": {
+    "name_jp": "加州清光",
+    "name_kana": "かしゅうきよみつ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Kashuu Kiyomitsu Kiwame",
+    "name_short": "Kashuu-kiwame"
+  },
+  "87": {
+    "name_jp": "大和守安定",
+    "name_kana": "やまとのかみやすさだ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Yamatonokami Yasusada",
+    "name_short": "Yamatonokami"
+  },
+  "88": {
+    "name_jp": "大和守安定",
+    "name_kana": "やまとのかみやすさだ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Yamatonokami Yasusada Kiwame",
+    "name_short": "Yamatonokami-kiwame"
+  },
+  "89": {
+    "name_jp": "歌仙兼定",
+    "name_kana": "かせんかねさだ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Kanesada",
+    "name_en": "Kasen Kanesada",
+    "name_short": "Kasen"
+  },
+  "90": {
+    "name_jp": "歌仙兼定",
+    "name_kana": "かせんかねさだ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Kanesada",
+    "name_en": "Kasen Kanesada Kiwame",
+    "name_short": "Kasen-kiwame"
+  },
+  "91": {
+    "name_jp": "和泉守兼定",
+    "name_kana": "いずみのかみかねさだ",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Kanesada",
+    "name_en": "Izuminokami Kanesada",
+    "name_short": "Izuminokami"
+  },
+  "92": {
+    "name_jp": "和泉守兼定",
+    "name_kana": "いずみのかみかねさだ",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "uchigatana",
+    "school": "Kanesada",
+    "name_en": "Izuminokami Kanesada Kiwame",
+    "name_short": "Izuminokami-kiwame"
+  },
+  "93": {
+    "name_jp": "陸奥守吉行",
+    "name_kana": "むつのかみよしゆき",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Mutsunokami Yoshiyuki",
+    "name_short": "Mutsunokami"
+  },
+  "94": {
+    "name_jp": "陸奥守吉行",
+    "name_kana": "むつのかみよしゆき",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Mutsunokami Yoshiyuki Kiwame",
+    "name_short": "Mutsunokami-kiwame"
+  },
+  "95": {
+    "name_jp": "山姥切国広",
+    "name_kana": "やまんばぎりくにひろ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Horikawa",
+    "name_en": "Yamanbagiri Kunihiro",
+    "name_short": "Yamanbagiri"
+  },
+  "96": {
+    "name_jp": "山姥切国広",
+    "name_kana": "やまんばぎりくにひろ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Horikawa",
+    "name_en": "Yamanbagiri Kunihiro Kiwame",
+    "name_short": "Yamanbagiri-kiwame"
+  },
+  "97": {
+    "name_jp": "山伏国広",
+    "name_kana": "やまぶしくにひろ",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": "Horikawa",
+    "name_en": "Yamabushi Kunihiro",
+    "name_short": "Yamabushi"
+  },
+  "98": {
+    "name_jp": "山伏国広",
+    "name_kana": "やまぶしくにひろ",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Horikawa",
+    "name_en": "Yamabushi Kunihiro Kiwame",
+    "name_short": "Yamabushi-kiwame"
+  },
+  "99": {
+    "name_jp": "堀川国広",
+    "name_kana": "ほりかわくにひろ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": "Horikawa",
+    "name_en": "Horikawa Kunihiro",
+    "name_short": "Horikawa"
+  },
+  "100": {
+    "name_jp": "堀川国広",
+    "name_kana": "ほりかわくにひろ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "wakizashi",
+    "school": "Horikawa",
+    "name_en": "Horikawa Kunihiro Kiwame",
+    "name_short": "Horikawa-kiwame"
+  },
+  "101": {
+    "name_jp": "蜂須賀虎徹",
+    "name_kana": "はちすかこてつ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Kotetsu",
+    "name_en": "Hachisuka Kotetsu",
+    "name_short": "Hachisuka"
+  },
+  "102": {
+    "name_jp": "蜂須賀虎徹",
+    "name_kana": "はちすかこてつ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Kotetsu",
+    "name_en": "Hachisuka Kotetsu Kiwame",
+    "name_short": "Hachisuka-kiwame"
+  },
+  "103": {
+    "name_jp": "浦島虎徹",
+    "name_kana": "うらしまこてつ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": "Kotetsu",
+    "name_en": "Urashima Kotetsu",
+    "name_short": "Urashima"
+  },
+  "104": {
+    "name_jp": "浦島虎徹",
+    "name_kana": "うらしまこてつ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "wakizashi",
+    "school": "Kotetsu",
+    "name_en": "Urashima Kotetsu Kiwame",
+    "name_short": "Urashima-kiwame"
+  },
+  "105": {
+    "name_jp": "長曽祢虎徹",
+    "name_kana": "ながそねこてつ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Kotetsu...?",
+    "name_en": "Nagasone Kotetsu",
+    "name_short": "Nagasone"
+  },
+  "106": {
+    "name_jp": "長曽祢虎徹",
+    "name_kana": "ながそねこてつ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Kotetsu...?",
+    "name_en": "Nagasone Kotetsu Kiwame",
+    "name_short": "Nagasone-kiwame"
+  },
+  "107": {
+    "name_jp": "髭切",
+    "name_kana": "ひげきり",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Higekiri",
+    "name_short": "Higekiri"
+  },
+  "108": {
+    "name_jp": "髭切",
+    "name_kana": "ひげきり",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Higekiri",
+    "name_short": "Higekiri"
+  },
+  "109": {
+    "name_jp": "髭切",
+    "name_kana": "ひげきり",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Higekiri",
+    "name_short": "Higekiri"
+  },
+  "110": {
+    "name_jp": "髭切",
+    "name_kana": "ひげきり",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Higekiri",
+    "name_short": "Higekiri"
+  },
+  "111": {
+    "name_jp": "髭切",
+    "name_kana": "ひげきり",
+    "kiwame": true,
+    "rarity": "5",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Higekiri Kiwame",
+    "name_short": "Higekiri-kiwame"
+  },
+  "112": {
+    "name_jp": "膝丸",
+    "name_kana": "ひざまる",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Hizamaru",
+    "name_short": "Hizamaru"
+  },
+  "113": {
+    "name_jp": "膝丸",
+    "name_kana": "ひざまる",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Hizamaru",
+    "name_short": "Hizamaru"
+  },
+  "114": {
+    "name_jp": "膝丸",
+    "name_kana": "ひざまる",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Hizamaru",
+    "name_short": "Hizamaru"
+  },
+  "115": {
+    "name_jp": "膝丸",
+    "name_kana": "ひざまる",
+    "kiwame": true,
+    "rarity": "5",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Hizamaru Kiwame",
+    "name_short": "Hizamaru-kiwame"
+  },
+  "116": {
+    "name_jp": "大倶利伽羅",
+    "name_kana": "おおくりから",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Hiromitsu",
+    "name_en": "Ookurikara",
+    "name_short": "Ookurikara"
+  },
+  "117": {
+    "name_jp": "大倶利伽羅",
+    "name_kana": "おおくりから",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "uchigatana",
+    "school": "Hiromitsu",
+    "name_en": "Ookurikara Kiwame",
+    "name_short": "Ookurikara-kiwame"
+  },
+  "118": {
+    "name_jp": "へし切長谷部",
+    "name_kana": "へしきりはせべ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Heshikiri Hasebe",
+    "name_short": "Heshikiri"
+  },
+  "119": {
+    "name_jp": "へし切長谷部",
+    "name_kana": "へしきりはせべ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Heshikiri Hasebe Kiwame",
+    "name_short": "Heshikiri-kiwame"
+  },
+  "120": {
+    "name_jp": "不動行光",
+    "name_kana": "ふどうゆきみつ",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": null,
+    "name_en": "Fudou Yukimitsu",
+    "name_short": "Fudou"
+  },
+  "121": {
+    "name_jp": "不動行光",
+    "name_kana": "ふどうゆきみつ",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": null,
+    "name_en": "Fudou Yukimitsu Kiwame",
+    "name_short": "Fudou-kiwame"
+  },
+  "122": {
+    "name_jp": "獅子王",
+    "name_kana": "ししおう",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Shishiou",
+    "name_short": "Shishiou"
+  },
+  "123": {
+    "name_jp": "獅子王",
+    "name_kana": "ししおう",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Shishiou Kiwame",
+    "name_short": "Shishiou-kiwame"
+  },
+  "124": {
+    "name_jp": "小烏丸",
+    "name_kana": "こがらすまる",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Kogarasumaru",
+    "name_short": "Kogarasumaru"
+  },
+  "125": {
+    "name_jp": "小烏丸",
+    "name_kana": "こがらすまる",
+    "kiwame": true,
+    "rarity": "6",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Kogarasumaru Kiwame",
+    "name_short": "Kogarasumaru-kiwame"
+  },
+  "126": {
+    "name_jp": "抜丸",
+    "name_kana": "ぬけまる",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Nukemaru",
+    "name_short": "Nukemaru"
+  },
+  "128": {
+    "name_jp": "同田貫正国",
+    "name_kana": "どうだぬきまさくに",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Doudanuki Masakuni",
+    "name_short": "Doudanuki"
+  },
+  "129": {
+    "name_jp": "同田貫正国",
+    "name_kana": "どうだぬきまさくに",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Doudanuki Masakuni Kiwame",
+    "name_short": "Doudanuki-kiwame"
+  },
+  "130": {
+    "name_jp": "鶴丸国永",
+    "name_kana": "つるまるくになが",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Tsurumaru Kuninaga",
+    "name_short": "Tsurumaru"
+  },
+  "131": {
+    "name_jp": "鶴丸国永",
+    "name_kana": "つるまるくになが",
+    "kiwame": true,
+    "rarity": "5",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Tsurumaru Kuninaga Kiwame",
+    "name_short": "Tsurumaru-kiwame"
+  },
+  "132": {
+    "name_jp": "太郎太刀",
+    "name_kana": "たろうたち",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "oodachi",
+    "school": null,
+    "name_en": "Taroutachi",
+    "name_short": "Taroutachi"
+  },
+  "133": {
+    "name_jp": "太郎太刀",
+    "name_kana": "たろうたち",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "oodachi",
+    "school": null,
+    "name_en": "Taroutachi Kiwame",
+    "name_short": "Taroutachi-kiwame"
+  },
+  "134": {
+    "name_jp": "次郎太刀",
+    "name_kana": "じろうたち",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "oodachi",
+    "school": null,
+    "name_en": "Jiroutachi",
+    "name_short": "Jiroutachi"
+  },
+  "135": {
+    "name_jp": "次郎太刀",
+    "name_kana": "じろうたち",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "oodachi",
+    "school": null,
+    "name_en": "Jiroutachi Kiwame",
+    "name_short": "Jiroutachi-kiwame"
+  },
+  "136": {
+    "name_jp": "日本号",
+    "name_kana": "にほんごう",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "yari",
+    "school": null,
+    "name_en": "Nihongou",
+    "name_short": "Nihongou"
+  },
+  "137": {
+    "name_jp": "日本号",
+    "name_kana": "にほんごう",
+    "kiwame": true,
+    "rarity": "5",
+    "type": "yari",
+    "school": null,
+    "name_en": "Nihongou Kiwame",
+    "name_short": "Nihongou-kiwame"
+  },
+  "138": {
+    "name_jp": "御手杵",
+    "name_kana": "おてぎね",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "yari",
+    "school": null,
+    "name_en": "Otegine",
+    "name_short": "Otegine"
+  },
+  "139": {
+    "name_jp": "御手杵",
+    "name_kana": "おてぎね",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "yari",
+    "school": null,
+    "name_en": "Otegine Kiwame",
+    "name_short": "Otegine-kiwame"
+  },
+  "140": {
+    "name_jp": "巴形薙刀",
+    "name_kana": "ともえがたなぎなた",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "naginata",
+    "school": null,
+    "name_en": "Tomoegata Naginata",
+    "name_short": "Tomoegata"
+  },
+  "141": {
+    "name_jp": "巴形薙刀",
+    "name_kana": "ともえがたなぎなた",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "naginata",
+    "school": null,
+    "name_en": "Tomoegata Naginata Kiwame",
+    "name_short": "Tomoegata-kiwame"
+  },
+  "142": {
+    "name_jp": "毛利藤四郎",
+    "name_kana": "もうりとうしろう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Mouri Toushirou",
+    "name_short": "Mouri"
+  },
+  "143": {
+    "name_jp": "毛利藤四郎",
+    "name_kana": "もうりとうしろう",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Awataguchi",
+    "name_en": "Mouri Toushirou Kiwame",
+    "name_short": "Mouri-kiwame"
+  },
+  "144": {
+    "name_jp": "篭手切江",
+    "name_kana": "こてぎりごう",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": "Gou",
+    "name_en": "Kotegiri Gou",
+    "name_short": "Kotegiri"
+  },
+  "145": {
+    "name_jp": "篭手切江",
+    "name_kana": "こてぎりごう",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "wakizashi",
+    "school": "Gou",
+    "name_en": "Kotegiri Gou Kiwame",
+    "name_short": "Kotegiri-kiwame"
+  },
+  "146": {
+    "name_jp": "謙信景光",
+    "name_kana": "けんしんかげみつ",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Osafune",
+    "name_en": "Kenshin Kagemitsu",
+    "name_short": "Kenshin"
+  },
+  "147": {
+    "name_jp": "謙信景光",
+    "name_kana": "けんしんかげみつ",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Osafune",
+    "name_en": "Kenshin Kagemitsu Kiwame",
+    "name_short": "Kenshin-kiwame"
+  },
+  "148": {
+    "name_jp": "小豆長光",
+    "name_kana": "あずきながみつ",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": "Osafune",
+    "name_en": "Azuki Nagamitsu",
+    "name_short": "Azuki"
+  },
+  "149": {
+    "name_jp": "小豆長光",
+    "name_kana": "あずきながみつ",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Osafune",
+    "name_en": "Azuki Nagamitsu Kiwame",
+    "name_short": "Azuki-kiwame"
+  },
+  "150": {
+    "name_jp": "日向正宗",
+    "name_kana": "ひゅうがまさむね",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Masamune",
+    "name_en": "Hyuuga Masamune",
+    "name_short": "Hyuuga"
+  },
+  "151": {
+    "name_jp": "日向正宗",
+    "name_kana": "ひゅうがまさむね",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": "Masamune",
+    "name_en": "Hyuuga Masamune Kiwame",
+    "name_short": "Hyuuga-kiwame"
+  },
+  "152": {
+    "name_jp": "静形薙刀",
+    "name_kana": "しずかがたなぎなた",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "naginata",
+    "school": null,
+    "name_en": "Shizukagata Naginata",
+    "name_short": "Shizukagata"
+  },
+  "153": {
+    "name_jp": "静形薙刀",
+    "name_kana": "しずかがたなぎなた",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "naginata",
+    "school": null,
+    "name_en": "Shizukagata Naginata Kiwame",
+    "name_short": "Shizukagata-kiwame"
+  },
+  "154": {
+    "name_jp": "南泉一文字",
+    "name_kana": "なんせんいちもんじ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Fukuoka Ichimonji",
+    "name_en": "Nansen Ichimonji",
+    "name_short": "Nansen"
+  },
+  "155": {
+    "name_jp": "南泉一文字",
+    "name_kana": "なんせんいちもんじ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Fukuoka Ichimonji",
+    "name_en": "Nansen Ichimonji Kiwame",
+    "name_short": "Nansen-kiwame"
+  },
+  "156": {
+    "name_jp": "千代金丸",
+    "name_kana": "ちよがねまる",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Chiyoganemaru",
+    "name_short": "Chiyoganemaru"
+  },
+  "157": {
+    "name_jp": "千代金丸",
+    "name_kana": "ちよがねまる",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Chiyoganemaru Kiwame",
+    "name_short": "Chiyoganemaru-kiwame"
+  },
+  "158": {
+    "name_jp": "山姥切長義",
+    "name_kana": "やまんばぎりちょうぎ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Yamanbagiri Chougi",
+    "name_short": "Chougi"
+  },
+  "159": {
+    "name_jp": "山姥切長義",
+    "name_kana": "やまんばぎりちょうぎ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Yamanbagiri Chougi Kiwame",
+    "name_short": "Chougi-kiwame"
+  },
+  "160": {
+    "name_jp": "豊前江",
+    "name_kana": "ぶぜんごう",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Gou",
+    "name_en": "Buzen Gou",
+    "name_short": "Buzen"
+  },
+  "161": {
+    "name_jp": "豊前江",
+    "name_kana": "ぶぜんごう",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Gou",
+    "name_en": "Buzen Gou Kiwame",
+    "name_short": "Buzen-kiwame"
+  },
+  "162": {
+    "name_jp": "祢々切丸",
+    "name_kana": "ねねきりまる",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "oodachi",
+    "school": null,
+    "name_en": "Nenekirimaru",
+    "name_short": "Nenekirimaru"
+  },
+  "163": {
+    "name_jp": "祢々切丸",
+    "name_kana": "ねねきりまる",
+    "kiwame": true,
+    "rarity": "4",
+    "type": "oodachi",
+    "school": null,
+    "name_en": "Nenekirimaru Kiwame",
+    "name_short": "Nenekirimaru-kiwame"
+  },
+  "164": {
+    "name_jp": "白山吉光",
+    "name_kana": "はくさんよしみつ",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tsurugi",
+    "school": "Awataguchi",
+    "name_en": "Hakusan Yoshimitsu",
+    "name_short": "Hakusan"
+  },
+  "166": {
+    "name_jp": "南海太郎朝尊",
+    "name_kana": "なんかいたろうちょうそん",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Nankaitarou Chouson",
+    "name_short": "Nankaitarou"
+  },
+  "167": {
+    "name_jp": "南海太郎朝尊",
+    "name_kana": "なんかいたろうちょうそん",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Nankaitarou Chouson Kiwame",
+    "name_short": "Nankaitarou-kiwame"
+  },
+  "168": {
+    "name_jp": "肥前忠広",
+    "name_kana": "ひぜんただひろ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": null,
+    "name_en": "Hizen Tadahiro",
+    "name_short": "Hizen"
+  },
+  "169": {
+    "name_jp": "肥前忠広",
+    "name_kana": "ひぜんただひろ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "wakizashi",
+    "school": null,
+    "name_en": "Hizen Tadahiro Kiwame",
+    "name_short": "Hizen-kiwame"
+  },
+  "170": {
+    "name_jp": "北谷菜切",
+    "name_kana": "ちゃたんなきり",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": null,
+    "name_en": "Chatannakiri",
+    "name_short": "Chatannakiri"
+  },
+  "171": {
+    "name_jp": "北谷菜切",
+    "name_kana": "ちゃたんなきり",
+    "kiwame": true,
+    "rarity": "2",
+    "type": "tantou",
+    "school": null,
+    "name_en": "Chatannakiri Kiwame",
+    "name_short": "Chatannakiri-kiwame"
+  },
+  "172": {
+    "name_jp": "桑名江",
+    "name_kana": "くわなごう",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Gou",
+    "name_en": "Kuwana Gou",
+    "name_short": "Kuwana"
+  },
+  "173": {
+    "name_jp": "桑名江",
+    "name_kana": "くわなごう",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Gou",
+    "name_en": "Kuwana Gou Kiwame",
+    "name_short": "Kuwana-kiwame"
+  },
+  "174": {
+    "name_jp": "水心子正秀",
+    "name_kana": "すいしんしまさひで",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Suishinshi Masahide",
+    "name_short": "Suishinshi"
+  },
+  "175": {
+    "name_jp": "水心子正秀",
+    "name_kana": "すいしんしまさひで",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Suishinshi Masahide Kiwame",
+    "name_short": "Suishinshi-kiwame"
+  },
+  "176": {
+    "name_jp": "源清麿",
+    "name_kana": "みなもときよまろ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Minamoto Kiyomaro",
+    "name_short": "Minamoto"
+  },
+  "177": {
+    "name_jp": "源清麿",
+    "name_kana": "みなもときよまろ",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Minamoto Kiyomaro Kiwame",
+    "name_short": "Minamoto-kiwame"
+  },
+  "178": {
+    "name_jp": "松井江",
+    "name_kana": "まついごう",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Gou",
+    "name_en": "Matsui Gou",
+    "name_short": "Matsui"
+  },
+  "179": {
+    "name_jp": "松井江",
+    "name_kana": "まついごう",
+    "kiwame": true,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Gou",
+    "name_en": "Matsui Gou Kiwame",
+    "name_short": "Matsui-kiwame"
+  },
+  "180": {
+    "name_jp": "山鳥毛",
+    "name_kana": "さんちょうもう",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Fukuoka Ichimonji",
+    "name_en": "Sanchoumou",
+    "name_short": "Sanchoumou"
+  },
+  "182": {
+    "name_jp": "古今伝授の太刀",
+    "name_kana": "こきんでんじゅのたち",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Bungo Yukihira",
+    "name_en": "Kokindenjunotachi",
+    "name_short": "Kokindenjunotachi"
+  },
+  "184": {
+    "name_jp": "地蔵行平",
+    "name_kana": "じぞうゆきひら",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Bungo Yukihira",
+    "name_en": "Jizou Yukihira",
+    "name_short": "Jizou"
+  },
+  "186": {
+    "name_jp": "治金丸",
+    "name_kana": "ちがねまる",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": null,
+    "name_en": "Chiganemaru",
+    "name_short": "Chiganemaru"
+  },
+  "188": {
+    "name_jp": "日光一文字",
+    "name_kana": "にっこういちもんじ",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Fukuoka Ichimonji",
+    "name_en": "Nikkou Ichimonji",
+    "name_short": "Nikkou"
+  },
+  "190": {
+    "name_jp": "太閤左文字",
+    "name_kana": "たいこうさもんじ",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Samonji",
+    "name_en": "Taikou Samonji",
+    "name_short": "Taikou"
+  },
+  "192": {
+    "name_jp": "五月雨江",
+    "name_kana": "さみだれごう",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Gou",
+    "name_en": "Samidare Gou",
+    "name_short": "Samidare"
+  },
+  "194": {
+    "name_jp": "大千鳥十文字槍",
+    "name_kana": "おおちどりじゅうもんじやり",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "yari",
+    "school": null,
+    "name_en": "Oochidori Juumonji Yari",
+    "name_short": "Oochidori"
+  },
+  "196": {
+    "name_jp": "泛塵",
+    "name_kana": "はんじん",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": null,
+    "name_en": "Hanjin",
+    "name_short": "Hanjin"
+  },
+  "198": {
+    "name_jp": "一文字則宗",
+    "name_kana": "いちもんじのりむね",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Fukuoka Ichimonji",
+    "name_en": "Ichimonji Norimune",
+    "name_short": "Ichimonji"
+  },
+  "200": {
+    "name_jp": "村雲江",
+    "name_kana": "むらくもごう",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Gou",
+    "name_en": "Murakumo Gou",
+    "name_short": "Murakumo"
+  },
+  "202": {
+    "name_jp": "姫鶴一文字",
+    "name_kana": "ひめつるいちもんじ",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Fukuoka Ichimonji",
+    "name_en": "Himetsuru Ichimonji",
+    "name_short": "Himetsuru"
+  },
+  "204": {
+    "name_jp": "福島光忠",
+    "name_kana": "ふくしまみつただ",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Osafune",
+    "name_en": "Fukushima Mitsutada",
+    "name_short": "Fukushima"
+  },
+  "206": {
+    "name_jp": "七星剣",
+    "name_kana": "しちせいけん",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tsurugi",
+    "school": null,
+    "name_en": "Shichiseiken",
+    "name_short": "Shichiseiken"
+  },
+  "208": {
+    "name_jp": "丙子椒林剣",
+    "name_kana": "へいししょうりんけん",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tsurugi",
+    "school": null,
+    "name_en": "Heishishourinken",
+    "name_short": "Heishishourinken"
+  },
+  "210": {
+    "name_jp": "稲葉江",
+    "name_kana": "いなばごう",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Gou",
+    "name_en": "Inaba Gou",
+    "name_short": "Inaba"
+  },
+  "212": {
+    "name_jp": "笹貫",
+    "name_kana": "ささぬき",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Sasanuki",
+    "name_short": "Sasanuki"
+  },
+  "214": {
+    "name_jp": "人間無骨",
+    "name_kana": "にんげんむこつ",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "yari",
+    "school": "Kanesada",
+    "name_en": "Ningen Mukotsu",
+    "name_short": "Ningen"
+  },
+  "216": {
+    "name_jp": "八丁念仏",
+    "name_kana": "はっちょうねんぶつ",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": "Kobizen",
+    "name_en": "Hacchou Nenbutsu",
+    "name_short": "Hacchou"
+  },
+  "218": {
+    "name_jp": "石田正宗",
+    "name_kana": "いしだまさむね",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Masamune",
+    "name_en": "Ishida Masamune",
+    "name_short": "Ishida"
+  },
+  "220": {
+    "name_jp": "実休光忠",
+    "name_kana": "じっきゅうみつただ",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Osafune",
+    "name_en": "Jikkyuu Mitsutada",
+    "name_short": "Jikkyuu"
+  },
+  "222": {
+    "name_jp": "京極正宗",
+    "name_kana": "きょうごくまさむね",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Masamune",
+    "name_en": "Kyougoku Masamune",
+    "name_short": "Kyougoku"
+  },
+  "224": {
+    "name_jp": "孫六兼元",
+    "name_kana": "まごろくかねもと",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Magoroku Kanemoto",
+    "name_short": "Magoroku"
+  },
+  "226": {
+    "name_jp": "後家兼光",
+    "name_kana": "ごけかねみつ",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Osafune",
+    "name_en": "Goke Kanemitsu",
+    "name_short": "Goke"
+  },
+  "228": {
+    "name_jp": "火車切",
+    "name_kana": "かしゃぎり",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "wakizashi",
+    "school": "Hiromitsu",
+    "name_en": "Kashagiri",
+    "name_short": "Kashagiri"
+  },
+  "230": {
+    "name_jp": "富田江",
+    "name_kana": "とみたごう",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "uchigatana",
+    "school": "Gou",
+    "name_en": "Tomita Gou",
+    "name_short": "Tomita"
+  },
+  "232": {
+    "name_jp": "大慶直胤",
+    "name_kana": "たいけいなおたね",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": null,
+    "name_en": "Taikei Naotane",
+    "name_short": "Taikei"
+  },
+  "234": {
+    "name_jp": "九鬼正宗",
+    "name_kana": "くきまさむね",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Masamune",
+    "name_en": "Kuki Masamune",
+    "name_short": "Kuki"
+  },
+  "236": {
+    "name_jp": "雲生",
+    "name_kana": "うんしょう",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": "Ukai",
+    "name_en": "Unshou",
+    "name_short": "Unshou"
+  },
+  "238": {
+    "name_jp": "道誉一文字",
+    "name_kana": "どうよいちもんじ",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tachi",
+    "school": "Fukuoka Ichimonji",
+    "name_en": "Douyo Ichimonji",
+    "name_short": "Douyo"
+  },
+  "240": {
+    "name_jp": "雲次",
+    "name_kana": "うんじ",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": "Ukai",
+    "name_en": "Unji",
+    "name_short": "Unji"
+  },
+  "242": {
+    "name_jp": "面影",
+    "name_kana": "おもかげ",
+    "kiwame": false,
+    "rarity": "3",
+    "type": "tachi",
+    "school": "Rai",
+    "name_en": "Omokage",
+    "name_short": "Omokage"
+  },
+  "244": {
+    "name_jp": "古備前信房",
+    "name_kana": "こびぜんのぶふさ",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": "Kobizen",
+    "name_en": "Kobizen Nobufusa",
+    "name_short": "Nobufusa"
+  },
+  "246": {
+    "name_jp": "倶利伽羅江",
+    "name_kana": "くりからごう",
+    "kiwame": false,
+    "rarity": "1",
+    "type": "tantou",
+    "school": "Gou",
+    "name_en": "Kurikara Gou",
+    "name_short": "Kurikara"
+  },
+  "248": {
+    "name_jp": "三郎国宗",
+    "name_kana": "さぶろうくにむね",
+    "kiwame": false,
+    "rarity": "4",
+    "type": "tachi",
+    "school": null,
+    "name_en": "",
+    "name_short": ""
+  },
+  "250": {
+    "name_jp": "安宅切",
+    "name_kana": "あたぎぎり",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Osafune",
+    "name_en": "",
+    "name_short": ""
+  },
+  "252": {
+    "name_jp": "二筋樋貞宗",
+    "name_kana": "ふたすじひさだむね",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Sadamune",
+    "name_en": "",
+    "name_short": ""
+  },
+  "254": {
+    "name_jp": "雲重",
+    "name_kana": "うんじゅう",
+    "kiwame": false,
+    "rarity": "2",
+    "type": "uchigatana",
+    "school": "Ukai",
+    "name_en": "",
+    "name_short": ""
+  },
+  "900": {
+    "name_jp": "童子切安綱 剥落",
+    "name_kana": "どうじぎりやすつな はくらく",
+    "kiwame": false,
+    "rarity": "5",
+    "type": "tachi",
+    "school": null,
+    "name_en": "Doujigiri Yasutsuna Hakuraku",
+    "name_short": "Hakuraku"
+  }
+}
