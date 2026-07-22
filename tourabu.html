@@ -40,6 +40,7 @@
 <div id="container">
 	<h2>TKRB Random Ship Generator</h2>
 	<form id="options">
+		<input type="radio" id="1" name="pairing" /><label for="1">Solo</label>
 		<input type="radio" id="2" name="pairing" checked /><label for="2">Pair</label>
 		<input type="radio" id="3" name="pairing" /><label for="3">Threesome</label>
 		<input type="radio" id="4" name="pairing" /><label for="4">Foursome</label>
@@ -56,12 +57,14 @@
 				<button type="button" id="random">Generate</button>
 	</form>
 	<div id="results">
-		<span id="char1"></span> X <span id="char2"></span><span id="threeway"> X <span id="char3"></span><span id="fourway"> X <span id="char4"></span>
+		<span id="char1"></span><span id="twoway"> X <span id="char2"></span><span id="threeway"> X <span id="char3"></span><span id="fourway"> X <span id="char4"></span></span></span></span>
 	</div>
 </div>
 
 <script>
-const TANTOU = ["Kyougoku Masamune",
+const TANTOU = [
+"Kurikara Gou",
+"Kyougoku Masamune",
 "Kuki Masamune",
 "Sayo Samonji",
 "Imanotsurugi",
@@ -126,7 +129,11 @@ const UCHIGATANA = ["Inaba Gou",
 "Kuwana Gou",
 "Sengo Muramasa",
 "Izuminokami Kanesada",
-"Nagasone Kotetsu"];
+"Nagasone Kotetsu",
+"Atagigiri",
+"Unjuu",
+"Futasujihi Sadamune",
+"Naminohira Yukiyasu"];
 const TACHI = ["Nukemaru",
 "Sasanuki",
 "Jikkyuu Mitsutada",
@@ -159,13 +166,21 @@ const TACHI = ["Nukemaru",
 "Sanchoumou",
 "Ookanehira",
 "Oodenta Mitsuyo",
-"Nikkou Ichimonji"];
+"Nikkou Ichimonji",
+"Saburou Kunimune",
+"Unji",
+"Unshou",
+"Kobizen Nobufusa",
+"Douyo Ichimonji",
+"Omokage",
+"Doujigiri Yasutsuna Hakuraku"];
 
 const OOTACHI = ["Hotarumaru",
 "Ishikirimaru",
 "Jiroutachi",
 "Taroutachi",
-"Nenekirimaru"];
+"Nenekirimaru",
+"Kashiwadachi"];
 
 const TSURUGI = ["Heishishourinken",
 "Hakusan Yoshimitsu",
@@ -210,10 +225,11 @@ function randomize() {
 		let char3 = randomInt(data.length);
 		CHAR3.innerHTML = data[char3];
 	case '2':
-		let char1 = randomInt(data.length);
 		let char2 = randomInt(data.length);
+		CHAR2.innerHTML = data[char2]
+	case '1':
+		let char1 = randomInt(data.length);
 		CHAR1.innerHTML = data[char1];
-		CHAR2.innerHTML = data[char2];
 	}
 }
 
@@ -225,14 +241,22 @@ function showHideChars() {
 	charCount = document.querySelector("input[name=pairing]:checked").id;
 	switch (charCount) {
 	case '4':
+		document.querySelector("#twoway").classList.remove("hide");
 		document.querySelector("#threeway").classList.remove("hide");
 		document.querySelector("#fourway").classList.remove("hide");
 		break;
 	case '3':
+		document.querySelector("#twoway").classList.remove("hide");
 		document.querySelector("#threeway").classList.remove("hide");
 		document.querySelector("#fourway").classList.add("hide");
 		break;
 	case '2':
+		document.querySelector("#twoway").classList.remove("hide");
+		document.querySelector("#threeway").classList.add("hide");
+		document.querySelector("#fourway").classList.add("hide");
+		break;
+	case '1':
+		document.querySelector("#twoway").classList.add("hide");
 		document.querySelector("#threeway").classList.add("hide");
 		document.querySelector("#fourway").classList.add("hide");
 		break;
