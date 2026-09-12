@@ -263,6 +263,10 @@ var cy = cytoscape({
     line-color: #000;
     line-style: solid;
     }
+    .dead {
+    line-color: #bbb;
+    line-opacity: 0.1;
+    }
     .enemy {background-color: rgb(88, 47, 139)}
     .exp {background-color: gold;}
     .health {background-color: rgb(17, 100, 166);}
@@ -306,7 +310,10 @@ var cy = cytoscape({
         // Do nothing, these are fixed
     } else {
         if (edge.hasClass("live")) {
-            cy.elements(edge).remove();
+            edge.removeClass("live");
+            edge.addClass("dead");
+        } else if (edge.hasClass("dead")) {
+            edge.removeClass("dead");
         } else {
             edge.addClass("live")
         }
@@ -334,7 +341,7 @@ var cy = cytoscape({
   function pathCalculate() {
     const boss = cy.elements('.boss')[0];
     if(boss) {
-        var aStar = cy.elements().aStar({ root: "#start", goal: `#${boss.id()}` });
+        var aStar = cy.elements().difference('.dead').aStar({ root: "#start", goal: `#${boss.id()}` });
         cy.elements().removeClass("highlight");
         aStar.path.addClass("highlight");
         console.log(aStar);
