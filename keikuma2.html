@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+   <head><title>Keichou Kumamoto SI Map Maker</title>
+   	<style type="text/css">
+         body {
+            margin: 0px;
+            background: repeat url('chiyoko/geo_bg.png');
+         }
+         #cy {
+     width: 100dvw;
+     height: 100dvh;
+     display: block;
+   }
+   
+   #guide, #debug {
+      width: 300px;
+      display: block;
+      position: absolute;
+      top: 20px;
+   
+      border: 2px solid black;
+      padding: 0.5rem;
+      background-color: beige;
+   }
+   
+   #guide { left: 20px;}
+   #debug { right: 20px; display: none;}
+   
+   ul {
+      padding-left:1em;
+   }
+      </style>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.33.1/cytoscape.min.js" integrity="sha512-kHAY8XzRfLVMcLuowdk91552RD+Nb2/1uHamfHMdLejNqlZnbEJLl1wYnsNnqIFCEZ++WaOcOlfokC6p9JWrLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+   
+   
+   </head>
+   <body>
+      <div id="cy"></div>
+      <div id="guide">
+         <center><b>Instructions</b></center>
+         <ul>
+            <li>Click or tap on a node to cycle through the highlight options</li>
+            <li>Click or tap on a line to mark it valid. Click or tap again to delete it</li>
+            <li>When a boss node is set on the left edge, a shortest path will be highlighted</li>
+            <li>The map can be dragged and zoomed.</li>
+         </ul>
+      </div>
+      <div id="debug"></div>
+         <script src="./keikuma.js"></script>
+      </body>
+      </html>
