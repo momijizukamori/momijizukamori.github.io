@@ -65,12 +65,12 @@ const elements = { nodes: [
     { data: {id: "n63" }, position: { x: 198, y: -89}},
     { data: {id: "n64" }, position: { x: 99, y: -89}},
     { data: {id: "n65" }, position: { x: 1, y: -89}},
-    { data: {id: "n66" }, classes: ["enemy"], position: { x: -246, y: 160}},
+    { data: {id: "n66" }, classes: ["enemy-fixed"], position: { x: -246, y: 160}},
     { data: {id: "start" }, position: { x: -291, y: 243}}
     ],
     edges: [
-{ data: { id: "e0", source: "n66", target: "start"}, classes: ["live"]},
-{ data: { id: "e1", source: "n66", target: "n7"}, classes: ["live"]},
+{ data: { id: "e0", source: "n66", target: "start"}, classes: ["live-fixed"]},
+{ data: { id: "e1", source: "n66", target: "n7"}, classes: ["live-fixed"]},
 { data: { id: "e2", source: "n7", target: "n6"}},
 { data: { id: "e3", source: "n6", target: "n5"}},
 { data: { id: "e4", source: "n5", target: "n3"}},
@@ -259,7 +259,7 @@ var cy = cytoscape({
     width: 4px;
     line-color: #bbb;
     line-style: dashed;}
-    .live {
+    .live, .live-fixed {
     line-color: #000;
     line-style: solid;
     }
@@ -267,7 +267,7 @@ var cy = cytoscape({
     line-color: #bbb;
     line-opacity: 0.1;
     }
-    .enemy {background-color: rgb(88, 47, 139)}
+    .enemy, .enemy-fixed {background-color: rgb(88, 47, 139)}
     .exp {background-color: gold;}
     .health {background-color: rgb(17, 100, 166);}
     #start, .boss { 
@@ -320,6 +320,11 @@ var cy = cytoscape({
         pathCalculate();
     }
   });
+
+  document.getElementById("reset").addEventListener("click", () => { cy.fit()})
+  document.getElementById("clear").addEventListener("click", () => { 
+    cy.elements().removeClass("live dead enemy light health exp boss highlight");
+})
   
   function cycleNode(el) {
     if (el.hasClass("enemy")) {
