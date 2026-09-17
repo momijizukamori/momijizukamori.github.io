@@ -40,13 +40,19 @@
       <div id="guide">
          <center><b>Instructions</b></center>
          <ul>
-            <li>Click or tap on a node to cycle through the highlight options</li>
-            <li>Click or tap on a line to to cycle through it's state (known path, removed path, unknown)</li>
-            <li>When a boss node is set on the right edge, a shortest path will be highlighted</li>
+            <li>Click or tap on a node to cycle through the highlight options.</li>
+            <li>Click or tap on a line to to cycle through its state (known path, removed path, unknown).</li>
+            <li>When a boss node is set on the right edge, a potential shortest path will be highlighted.</li>
             <li>The map can be dragged and zoomed.</li>
          </ul>
+         <div>
+            Shortest possible: <span id="ideal"></span><br>
+            Moves used: <span id="used"></span><br>
+            Shortest remaining: <span id="actual"></span><br>
+         </div>
          <button type="button" name="reset" id="reset">Reset View</button> 
-         <button type="button" name="clear" id="clear">Clear Map</button> 
+         <button type="button" name="clear" id="clear">Clear Map</button> <br>
+         <input type="checkbox" name="toggle" id="toggle"><label>Switch To Path Entry</label></input>
       </div>
       <div id="debug"></div>
          <script src="./keikuma.js"></script>

@@ -280,28 +280,57 @@ var cy = cytoscape({
         background-gradient-stop-colors: #cc97e7 #cc97e7 #582f8b;
         background-gradient-stop-positions: 0% 10% 90%
         }
-    .highlight{
+    .ideal{
     line-outline-color: red;
     outline-color: red;
+    line-outline-width: 3px;
+    outline-width: 3px;
+    }
+
+    .actual{
+    line-outline-color: blue;
+    outline-color: blue;
+    line-outline-width: 3px;
+    outline-width: 3px;
+    }
+            .used {
+    line-outline-color: purple;
+    outline-color: purple;
     line-outline-width: 3px;
     outline-width: 3px;
     }`,
   });
 
-  cy.on("tap", "node", function (evt) {
+  var visited = ["start", "n66"];
+  const toggle = document.getElementById("toggle");
+
+  cy.on("tap", "node", function(evt) {
     var node = evt.target;
     console.log(node.id());
     const nodeId = node.id();
-    if (["n66", "n66"].includes(nodeId)) {
+    if (["n66", "start"].includes(nodeId)) {
         // Do nothing, these are fixed
     } else if(["n61", "n43", "n37", "n56"].includes(nodeId)) {
         cy.nodes(".boss").removeClass("boss");
         node.addClass("boss");
-        pathCalculate();
+        actualPath();
+        idealPath();
     } else {
-        cycleNode(node);
+        if (toggle.checked) {
+            visited.push(node.id());
+            console.log(visited);
+            actualPath();
+            document.getElementById("used").innerText = `${visited.length - 1}`;
+            colorPath();
+
+        } else {
+            cycleNode(node);
+
+        }
+
     }
-  });
+    
+  } );
 
   cy.on("tap", "edge", function (evt) {
     var edge = evt.target;
@@ -317,7 +346,14 @@ var cy = cytoscape({
         } else {
             edge.addClass("live")
         }
-        pathCalculate();
+        // Only recalc if we changed edges in the paths
+        if (cy.$(".actual").contains(cy.$(edge))){
+            actualPath();
+        }
+
+        if (cy.$(".ideal").contains(cy.$(edge))){
+            idealPath();
+        }
     }
   });
 
@@ -325,7 +361,7 @@ var cy = cytoscape({
   document.getElementById("clear").addEventListener("click", () => { 
     cy.elements().removeClass("live dead enemy light health exp boss highlight");
 })
-  
+
   function cycleNode(el) {
     if (el.hasClass("enemy")) {
         el.removeClass("enemy");
@@ -343,13 +379,35 @@ var cy = cytoscape({
     }
   }
 
-  function pathCalculate() {
+  function idealPath() {
+    pathCalculate("start", "ideal");
+  }
+
+  function actualPath() {
+    var last = visited[visited.length - 1];
+    pathCalculate(last, "actual");
+  }
+
+  function pathCalculate(nodeId, highlightClass) {
+    console.log(nodeId);
     const boss = cy.elements('.boss')[0];
     if(boss) {
-        var aStar = cy.elements().difference('.dead').aStar({ root: "#start", goal: `#${boss.id()}` });
-        cy.elements().removeClass("highlight");
-        aStar.path.addClass("highlight");
-        console.log(aStar);
+        var aStar = cy.elements().difference('.dead').aStar({ root: `#${nodeId}`, goal: `#${boss.id()}` });
+        cy.elements().removeClass(highlightClass);
+        aStar.path.addClass(highlightClass);
+        document.getElementById(highlightClass).innerText = aStar.distance;
     }
+  }
 
+  function colorPath() {
+    var prev = null;
+    for (let node of visited) {
+        var cyNode = cy.$(`#${node}`);
+        cyNode.addClass("used")
+        if (prev != null) {
+            prev.edgesTo(cyNode).addClass("used");
+            cyNode.edgesTo(prev).addClass("used");
+        }
+        prev = cyNode;
+    }
   }
