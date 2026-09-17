@@ -24,7 +24,6 @@
    }
    
    #guide { left: 20px;}
-   #debug { right: 20px; display: none;}
    
    ul {
       padding-left:1em;
@@ -34,7 +33,7 @@
   position: relative;
   display: inline-block;
   width: 3.75em;
-  height: 2.125em;
+  height: 1.75em;
 }
 
 .control {
@@ -47,31 +46,38 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 2.125em;
-  background-color: #e0f762;
+  border-radius: 2.75em;
+border: 2px solid black;
   cursor: pointer;
   transition: .4s;
+  box-sizing: border-box;
 }
 
 .slider::before {
   content: "";
   position: absolute;
-  height: 1.625em;
-  width: 1.625em;
-  left: 0.25em;
-  bottom: 0.25em;
   border-radius: 50%;
-  background: #fff;
   transition: .4s;
-}
-
-.control:checked+.switch .slider {
-  background: rgb(240, 128, 255);
+background: black;
+height: calc(1.75em - 2px);
+width: calc(1.75em - 2px);
+box-sizing: border-box;
 }
 
 .control:checked+.switch .slider::before {
-  transform: translateX(1.625em);
+  transform: translateX(1.925em);
 }
+
+.track {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.5em;
+  margin: 1em 0;
+  justify-content: center;
+}
+
       </style>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.33.1/cytoscape.min.js" integrity="sha512-kHAY8XzRfLVMcLuowdk91552RD+Nb2/1uHamfHMdLejNqlZnbEJLl1wYnsNnqIFCEZ++WaOcOlfokC6p9JWrLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
       <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
@@ -81,27 +87,30 @@
    <body>
       <div id="cy"></div>
       <div id="guide">
-         <center><b>Instructions</b></center>
+         <details open>
+         <summary><b>Instructions</b></summary>
          <ul>
             <li>When a boss node is set on the right edge, a potential shortest path will be highlighted.</li>
             <li>Click or tap on a line to to cycle through its state (known path, removed path, unknown).</li>
             <li>Click or tap on a node to cycle through the highlight options.</li>
             <li>The map can be dragged and zoomed.</li>
          </ul>
+         </details>
          <div>
             Shortest possible: <span id="ideal"></span><br>
             Moves used: <span id="used"></span><br>
             Shortest remaining: <span id="actual"></span><br>
          </div>
-         <div>
-         Edit Nodes<input id='toggle' class='control' type="checkbox">
+         <div class="track">
+         <div class="label">Edit Nodes</div><input id='toggle' class='control' type="checkbox">
 <label class="switch" for='toggle'>
   <output class="slider" for='toggle'></output>
-</label> Track Route</div>
+</label><div class="label">Track Route</div>
+</div>
          <button type="button" name="reset" id="reset">Reset View</button> 
-         <button type="button" name="clear" id="clear">Clear Map</button> <br>
+         <button type="button" name="clear" id="clear">Clear Map</button>
+         <button type="button" name="undo" id="undo">Undo Move</button>
       </div>
-      <div id="debug"></div>
          <script src="./keikuma.js"></script>
       </body>
       </html>

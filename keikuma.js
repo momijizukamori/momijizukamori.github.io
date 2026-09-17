@@ -298,7 +298,18 @@ var cy = cytoscape({
     outline-color: purple;
     line-outline-width: 3px;
     outline-width: 3px;
-    }`,
+    }
+    .current{
+    label: ⚑;
+    font-size: 2.5em;
+    text-halign:center;
+    text-valign:center;
+    text-margin-x: 0.5em;
+    text-outline-color: #FFF;
+    text-margin-y: -1em;
+    text-outline-width: 1px;
+    z-index: 100;}
+    `
   });
 
   var visited = ["start", "n66"];
@@ -317,6 +328,7 @@ var cy = cytoscape({
         node.addClass("boss");
         actualPath();
         idealPath();
+        colorPath();
     } else {
         if (toggle.checked) {
             visited.push(node.id());
@@ -357,11 +369,19 @@ var cy = cytoscape({
 
   document.getElementById("reset").addEventListener("click", () => { cy.fit()})
   document.getElementById("clear").addEventListener("click", () => { 
-    cy.elements().removeClass("live dead enemy light health exp boss used ideal actual");
+    cy.elements().removeClass("live dead enemy light health exp boss used ideal actual current");
     for (let item of ["actual", "ideal", "used"]) {
         document.getElementById(item).innerText = "";
     }
     
+})
+document.getElementById("undo").addEventListener("click", () => { 
+    // Can't undo past fixed nodes
+    if (visited.length > 2) {
+        visited.pop();
+        actualPath();
+        colorPath();
+    }
 })
 
   function cycleNode(el) {
@@ -388,6 +408,8 @@ var cy = cytoscape({
   function actualPath() {
     var last = visited[visited.length - 1];
     pathCalculate(last, "actual");
+    cy.$(".current").removeClass("current");
+    cy.$(`#${last}`).addClass("current");
   }
 
   function pathCalculate(nodeId, highlightClass) {
