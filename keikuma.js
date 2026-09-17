@@ -303,6 +303,8 @@ var cy = cytoscape({
 
   var visited = ["start", "n66"];
   const toggle = document.getElementById("toggle");
+  const used = document.getElementById("used");
+  const move_text = " moves"
 
   cy.on("tap", "node", function(evt) {
     var node = evt.target;
@@ -320,16 +322,12 @@ var cy = cytoscape({
             visited.push(node.id());
             console.log(visited);
             actualPath();
-            document.getElementById("used").innerText = `${visited.length - 1}`;
+            used.innerText = `${visited.length - 1}${move_text}`;
             colorPath();
-
         } else {
             cycleNode(node);
-
         }
-
     }
-    
   } );
 
   cy.on("tap", "edge", function (evt) {
@@ -359,7 +357,11 @@ var cy = cytoscape({
 
   document.getElementById("reset").addEventListener("click", () => { cy.fit()})
   document.getElementById("clear").addEventListener("click", () => { 
-    cy.elements().removeClass("live dead enemy light health exp boss highlight");
+    cy.elements().removeClass("live dead enemy light health exp boss used ideal actual");
+    for (let item of ["actual", "ideal", "used"]) {
+        document.getElementById(item).innerText = "";
+    }
+    
 })
 
   function cycleNode(el) {
@@ -395,7 +397,7 @@ var cy = cytoscape({
         var aStar = cy.elements().difference('.dead').aStar({ root: `#${nodeId}`, goal: `#${boss.id()}` });
         cy.elements().removeClass(highlightClass);
         aStar.path.addClass(highlightClass);
-        document.getElementById(highlightClass).innerText = aStar.distance;
+        document.getElementById(highlightClass).innerText = `${aStar.distance}${move_text}`;
     }
   }
 
