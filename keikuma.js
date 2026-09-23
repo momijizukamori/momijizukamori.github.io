@@ -323,7 +323,7 @@ var cy = cytoscape({
     const nodeId = node.id();
     if (["n66", "start"].includes(nodeId)) {
         // Do nothing, these are fixed
-    } else if(["n61", "n43", "n37", "n56"].includes(nodeId)) {
+    } else if(["n61", "n43", "n37", "n56"].includes(nodeId) && !node.hasClass('boss')) {
         cy.nodes(".boss").removeClass("boss");
         node.addClass("boss");
         actualPath();
@@ -378,9 +378,9 @@ var cy = cytoscape({
 document.getElementById("undo").addEventListener("click", () => { 
     // Can't undo past fixed nodes
     if (visited.length > 2) {
-        visited.pop();
+        const bad = visited.pop();
+        cy.$(`#${bad}`).removeClass("used");
         actualPath();
-        colorPath();
     }
 })
 
