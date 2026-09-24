@@ -65,12 +65,12 @@ const elements = { nodes: [
     { data: {id: "n63" }, position: { x: 198, y: -89}},
     { data: {id: "n64" }, position: { x: 99, y: -89}},
     { data: {id: "n65" }, position: { x: 1, y: -89}},
-    { data: {id: "n66" }, classes: ["enemy-fixed"], position: { x: -246, y: 160}},
+    { data: {id: "n66" }, classes: ["used-fixed"], position: { x: -246, y: 160}},
     { data: {id: "start" }, position: { x: -291, y: 243}}
     ],
     edges: [
-{ data: { id: "e0", source: "n66", target: "start"}, classes: ["live-fixed"]},
-{ data: { id: "e1", source: "n66", target: "n7"}, classes: ["live-fixed"]},
+{ data: { id: "e0", source: "n66", target: "start"}, classes: ["used-fixed", "live-fixed"]},
+{ data: { id: "e1", source: "n66", target: "n7"}, classes: ["used-fixed", "live-fixed"]},
 { data: { id: "e2", source: "n7", target: "n6"}},
 { data: { id: "e3", source: "n6", target: "n5"}},
 { data: { id: "e4", source: "n5", target: "n3"}},
@@ -259,6 +259,7 @@ var cy = cytoscape({
     width: 4px;
     line-color: #bbb;
     line-style: dashed;}
+    
     .live, .live-fixed {
     line-color: #000;
     line-style: solid;
@@ -267,9 +268,8 @@ var cy = cytoscape({
     line-color: #bbb;
     line-opacity: 0.1;
     }
-    .enemy, .enemy-fixed {background-color: rgb(88, 47, 139)}
-    .exp {background-color: gold;}
-    .health {background-color: rgb(17, 100, 166);}
+    .exp {background-color: #f3de22;}
+    .health {background-color: #227cc5;}
     #start, .boss { 
         background-fill: radial-gradient;
         background-gradient-stop-colors: #FBAABB #FBAABB #E52164;
@@ -280,6 +280,24 @@ var cy = cytoscape({
         background-gradient-stop-colors: #cc97e7 #cc97e7 #582f8b;
         background-gradient-stop-positions: 0% 10% 90%
         }
+
+    .exp.used {
+        background-fill: radial-gradient;
+        background-gradient-stop-colors: #f3de22 #333 #333;
+        background-gradient-stop-positions: 0% 50% 90%
+        } 
+
+    .light.used {
+        background-fill: radial-gradient;
+        background-gradient-stop-colors: #cc97e7 #333 #333;
+        background-gradient-stop-positions: 0% 50% 80%
+    }
+
+    .health.used {
+        background-fill: radial-gradient;
+        background-gradient-stop-colors: #227cc5 #333 #333;
+        background-gradient-stop-positions: 0% 50% 90%
+    }
     .ideal{
     line-outline-color: red;
     outline-color: red;
@@ -293,11 +311,11 @@ var cy = cytoscape({
     line-outline-width: 3px;
     outline-width: 3px;
     }
-            .used {
-    line-outline-color: purple;
-    outline-color: purple;
-    line-outline-width: 3px;
-    outline-width: 3px;
+    .used, .used-fixed {
+        background-color: #333;
+    }
+    edge.used, edge.used-fixed {
+    width: 8px
     }
     .current{
     label: ⚑;
@@ -330,7 +348,7 @@ var cy = cytoscape({
         idealPath();
         colorPath();
     } else {
-        if (toggle.checked) {
+        if (toggle.checked && node.allAreNeighbors(cy.$(".current"))) {
             visited.push(node.id());
             console.log(visited);
             actualPath();
@@ -385,10 +403,7 @@ document.getElementById("undo").addEventListener("click", () => {
 })
 
   function cycleNode(el) {
-    if (el.hasClass("enemy")) {
-        el.removeClass("enemy");
-        el.addClass("light");
-    } else if (el.hasClass("light")) {
+    if (el.hasClass("light")) {
         el.removeClass("light");
         el.addClass("health");
     } else if (el.hasClass("health")) {
@@ -397,7 +412,7 @@ document.getElementById("undo").addEventListener("click", () => {
     } else if (el.hasClass("exp")) {
         el.removeClass("exp");
     } else {
-        el.addClass("enemy");
+        el.addClass("light");
     }
   }
 
