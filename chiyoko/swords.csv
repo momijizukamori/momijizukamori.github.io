@@ -7,6 +7,7 @@
 "000015","Sohayanotsurugi",1,0
 "000017","Juzumaru Tsunetsugu",1,0
 "000019","Nikkari Aoe",1,0
+"000021","Onimaru Kunitsuna",1,0
 "000023","Nakigitsune",1,0
 "000025","Ichigo Hitofuri",1,0
 "000027","Namazuo Toushirou",1,0
@@ -71,19 +72,33 @@
 "000152","Shizukagata Naginata",1,0
 "000154","Nansen Ichimonji",1,0
 "000156","Chiyoganemaru",1,0
-"000158","Yamanbagiri Chougi",0,0
-"000160","Buzen Gou",0,0
+"000158","Yamanbagiri Chougi",1,0
+"000160","Buzen Gou",1,0
+"000162","Nenekirimaru",1,0
 "000166","Nankaitarou Chouson",1,0
 "000168","Hizen Tadahiro",1,0
-"000170","Chatannakiri",0,0
+"000170","Chatannakiri",1,0
 "000172","Kuwana Gou",1,0
+"000174","Suishinshi Masahide",1,0
+"000176","Minamoto Kiyomaru",1,0
 "000178","Matsui Gou",1,0
-"000188","Nikkou Ichimonji",0,0
+"000180","Sanchoumou",1,0
+"000182","Kokindenjunotachi",1,0
+"000184","Jizou Yukihira",1,0
+"000186","Chiganemaru",1,0
+"000188","Nikkou Ichimonji",1,0
+"000190","Taikou Samonji",1,0
+"000192","Samidare Gou",1,0
+"000194","Oochidori Juumonji Yari",1,0
 "000196","Hanjin",1,0
-"000204","Fukushima Mitsutada",1,1
+"000198","Ichimonji Norimune",1,0
+"000200","Murakumo Gou",1,0
+"000202","Himetsuru Ichimonji",1,0
+"000204","Fukushima Mitsutada",0,0
 "000212","Sasanuki",0,0
 "000218","Ishida Masamune",0,0
 "000220","Jikkyuu Mitsutada",0,0
+"000224","Magoroku Kanemoto",1,1
 "000236","Unshou",1,1
 "000240","Unji",1,1
 "000242","Omokage",0,0
