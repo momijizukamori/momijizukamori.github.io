@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <title>Pazugiri Wiki Story Chapter Formatter</title>
+    <style>
+        main {
+            max-width: 80em;
+        }
+
+        main,
+        button,
+        textarea,
+        label {
+            margin: auto;
+        }
+
+        label {
+            display: inline-block;
+        }
+
+        textarea {
+            width: 80%;
+            display: block;
+            height: 30em;
+        }
+
+        button {
+            display: block;
+            margin: 2em auto;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2>Pazugiri Wiki Story Chapter Formatter</h2>
+        <p>Formats the Unity scripts for story chapters into wiki format</p>
+        <!-- <div><label>Recollection ID: <input type="text" id="recoll_id"></input></label></div> -->
+        <textarea id="input" name="input"></textarea>
+        <button type="button" id="process">Process input</button>
+        <textarea id="output" name="output" readonly></textarea>
+    </main>
+    <script type="module">
+       // import sword_names from './sword_data/name_long.json' with {type: "json"};
+            const header = `
+{{Dialogue Map
+|world= 3
+|map= 02
+|title= Some title
+|characters=
+|dialogue=  `;
+            const convo = [header]
+
+        const output = document.getElementById('output');
+        document.getElementById('process').addEventListener('click', (e) => {
+            const inputText = document.getElementById('input').value;
+            // const recoll_id = document.getElementById('recoll_id').value || "###";
+
+            const inputData = JSON.parse(inputText);
+
+            const swords = new Map();
+
+
+            inputData._pages.forEach((page) => {
+                let text = page._text
+                if (text._message) {
+                    convo.push(`${page._character._charaId} = ${text._message.replace(/\n/g, "<br>")} = `)
+                }
+            });
+
+            convo.push(`}}`);
+
+            output.value = convo.join('\n');
+        });
+    </script>
+</body>
+
+</html>
