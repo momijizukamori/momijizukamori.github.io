@@ -50,22 +50,40 @@
 |title= Some title
 |characters=
 |dialogue=  `;
-            const convo = [header]
+
 
         const output = document.getElementById('output');
         document.getElementById('process').addEventListener('click', (e) => {
+            const convo = [header]
             const inputText = document.getElementById('input').value;
             // const recoll_id = document.getElementById('recoll_id').value || "###";
 
             const inputData = JSON.parse(inputText);
 
-            const swords = new Map();
+            const swords = new Map([
+                [0, "Boss/NPC"],
+                [10002001, "Mikazuki Munechika"],
+                [10045001, "Kasen Kanesada"],
+                [10006001, "Imanotsurugi"],
+                [10015001, "Honebami Toushirou"],
+                [10025001, "Yagen Toushirou"],
+                [10027001, "Ookanehira"],
+                [10047001, "Mutsunokami Yoshiyuki"],
+                [10051001, "Hachisuka Kotetsu"],
+                [10078001, "Buzen Gou"],
+                [10104001, "Sasanuki"],
+
+                [30100601, "Boss - Oni - Boss-Oni - Big Oni"]
+            ]);
 
 
             inputData._pages.forEach((page) => {
                 let text = page._text
+                let balloonType = text._balloonType;
+                let showTail = text._isBalloonArrowEnable;
+                let classStr = (balloonType == 3 || showTail !=1) ? `: ${balloonType == 3 ? "shout " : ""}${showTail != 1 ? "no-tail" : ""}` : ``;
                 if (text._message) {
-                    convo.push(`${page._character._charaId} : ${text._message.replace(/\n/g, "<br>")} # `)
+                    convo.push(`${swords.get(page._character._charaId)}${classStr.trim()}: ${text._message.replace(/\n/g, "<br>")} # `)
                 }
             });
 
