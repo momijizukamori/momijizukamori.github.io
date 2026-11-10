@@ -65,7 +65,7 @@
             inputData._pages.forEach((page) => {
                 let text = page._text
                 if (text._message) {
-                    convo.push(`${page._character._charaId} = ${text._message.replace(/\n/g, "<br>")} = `)
+                    convo.push(`${page._character._charaId} : ${text._message.replace(/\n/g, "<br>")} # `)
                 }
             });
 
